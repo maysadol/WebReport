@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/Mycss.css"/>
+	<style>
+	a:active{
+    color: black;
+}
+	.navbar {
+	  padding-top: 0px;
+	  padding-bottom: 0px;
+	  border: 0;
+	  border-radius: 0;
+	  margin-bottom: 0;
+	  font-size: 14px;
+	  letter-spacing: 3px;
+	}	
+	h{ 
+		padding-top: 20px;
+		padding-bottom: 20px;
+		font-size:40px;
+		color:white;
+		margin-left:10px;}
+	p {
+		font-size: 14px;
+		white-space: nowrap;
+		
+		}
+	div2 {
+	margin-left: 10px;
+    white-space: nowrap;
+	overflow-x: auto
+	}
+	
+	label { margin-left:15px;}
+	button-view { margin-left:20px;}
+	.btn
+		{
+		color:white;
+		background-color: #1C2833    ;
+		border-color: #1C2833    ;
+		}
+	input {pandding-top:10px; }
+	topic { margin-left: 40px;
+			font-weight: bold;
+			white-space: nowrap;
+			overflow-x: auto}
+			
+	}
+	 
+	 .bg-1 { 
+      background-color: #92D050; /* Green */
+      color: #ffffff;
+		}
+	.container-fluid-1 {
+      padding-top: 70px;
+      padding-bottom: 70px;
+	  background-color: #92D050;
+	  
+	
+
+
+	</style>
+ </head>
+  <body style="background-color:#151515;">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<!-- First Container -->
+
+<div class="container-fluid-1">
+  <h class="margin">Daily Report</h>
+ 
+</div>
+  
+  
+  
+  
+  <!--nav!-->
+<div>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+  
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="file:///D:/Project/WebReport/DailyReport.html">Daily Report</a></li>
+      <li class="active"><a href="file:///D:/Project/WebReport/test.html">Test</a></li>
+	  <li><a href="file:///D:/Project/WebReport/Admin.html">Project</a></li>
+	    <li><a href="file:///D:/Project/WebReport/Personal.html">Personnel</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	  
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+<!--sort by date tap-->	
+    <div class="well well-sm" style="background-color:#FFFF;">
+	<topic>Daily</topic>
+	<div2 id="datetimepicker4" class="input-append">
+    <input data-format="dd-MM-yyyy" type="text" style="height:25px; margin:5px;"></input>  
+    <span class="add-on" style="height:25px; weight:25;  margin-top:5px; margin-bottom:5px; " >
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar" s">
+      </i>
+    </span>
+	</div2>
+	
+
+	<label class="radio-inline"><input type="radio" name="optradio" checked>Weakly</label>
+	<label class="radio-inline"><input type="radio" name="optradio">Monthly</label>
+	<label class="radio-inline"><input type="radio" name="optradio">Yearly</label>
+	
+	<topic>Sort by</topic>
+			<div2 class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+				Date
+				<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a href="#" data-value="Username">Username</a></li>
+					<li><a href="#" data-value="Location">Location</a></li>
+					<li><a href="#" data-value="Project">Project</a></li>
+					
+				  </ul>
+			</div2>
+	
+	<button-view type="button" class="btn">View report </button-view>
+	<!--search!-->
+	<topic>Search</Topic>
+	<div2 class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				All
+				<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a href="#" data-value="Project">All</a></li>
+					<li><a href="#" data-value="Project">Date</a></li>
+					<li><a href="#" data-value="Username">Username</a></li>
+					<li><a href="#" data-value="Location">Location</a></li>
+					<li><a href="#" data-value="Project">Project</a></li>
+				  </ul>
+			</div2>
+	<input type="text" style="height:25px; margin-top:5px;" ></input>	
+	 <a href="#" style="color:green;">
+          <span class="glyphicon glyphicon-search " style="font-size: 20px; top:5px; color:green"></span>
+	</div>
+	
+    <script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
+    <script type="text/javascript">
+	  $(function() {
+		$('#datetimepicker4').datetimepicker({
+		  pickTime: false
+		});
+	  });
+	</script>
+	<script type="text/javascript">
+			$(".dropdown-menu li a").click(function(){
+			  $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+			  $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+			});
+	</script>
+
+	
+
+ 
+</div>
+  
+	
+	
+
+	
+  </body>
+<html>
