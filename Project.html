@@ -24,21 +24,6 @@
 	  font-size: 14px;
 	  letter-spacing: 3px;
 		}	
-	iframe.location {
-	 	display: block;
-		margin-left: auto;
-		margin-right: auto;
-		height: 300px;
-		width: 60%;
-		
-		}
-	img.userpic {
-	 	display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 15%;
-		
-		}
 	h{ 
 		padding-top: 20px;
 		padding-bottom: 20px;
@@ -48,50 +33,37 @@
 		}
 	p {
 		font-size: 14px;
+		white-space: nowrap;
 		
 		}
-		
-	p.head {	
-		margin-top: 30px;
-		font-size: 14px;
-		font-weight: bold;
-		color:#92D050; 
-		text-align:center;
-		white-space: nowrap;
-	}
-	p.info {
-		font-size: 14px;
-		color:#FFFF;
-		font-weight: normal;
-		text-align:center;
-		white-space: nowrap;
-	}
-	thead.head {
-		font-size: 14px;
-		color:#92D050;
-		font-weight: normal;
-	}
-	tbody.info {
-		font-size: 14px;
-		color:#FFFF;
-		font-weight: normal;
-	}
-		
-				
-			
-	p.mainhead{ 
-				margin-top:50px;
-				font-size: 30px;			
+	.h-project{ 			
 				font-weight: 30px;
 				text-align:center;
-				color:white;
-				
+	
+	div2 {
+		margin-left: 10px;
+		white-space: nowrap;
+		overflow-x: auto
 		}
-				
 	
-	
+	label { margin-left:15px;}
+	button-view { margin-left:20px;}
+	.btn
+		{
+		color:white;
+		background-color: #1C2833    ;
+		border-color: #1C2833    ;
+		}
+	input {pandding-top:10px; }
+	topic { margin-left: 40px;
+			font-weight: bold;
+			white-space: nowrap;
+			overflow-x: auto}
+			
+		}
+	 
 	 .bg-1 { 
-      background-color: #92D050; 
+      background-color: #92D050; /* Green */
       color: #ffffff;
 		}
 	.container-fluid-1 {
@@ -99,14 +71,12 @@
       padding-bottom: 70px;
 	  background-color: #92D050;
 
-	.blue {
-    color: blue;
-}
+	
 
 
 	</style>
  </head>
-  <body id="project" style="background-color:#151515;">
+  <body style="background-color:#151515;">
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -135,12 +105,13 @@
   
     <ul class="nav navbar-nav">
         <li><a href="#">Home</a></li>
-      <li><a href="file:///D:/WebReport/DailyReport.html">Daily Report</a></li>
+      <li ><a href="file:///D:/WebReport/DailyReport.html">Daily Report</a></li>
       <li><a href="file:///D:/WebReport/test.html">Test</a></li>
-	  <li><a href="file:///D:/WebReport/Project.html">Project</a></li>
-	  <li  class="active"><a href="file:///D:/WebReport/Personal.html">Personnel</a></li>
+	  <li class="active"><a href="file:///D:/WebReport/Project.html">Project</a></li>
+	  <li ><a href="file:///D:/WebReport/Personal.html">Personnel</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+	  
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
@@ -149,67 +120,19 @@
 </div>
 
 
+<!--Project List !-->
 
-
-<!--Member info!-->
-
-<div class="container">
-<p class="mainhead" >Personal</p>
- 
- <img class="userpic" src="userpic.png" style="width:15%; ">
-
-   
-<p class="head">Name</p> 
-<p class="info">John Jat(Ja)</p> 
-<p class="head">Job position</p>
-<p class="info">Developer</p> 
-
-
-
-
-<!--Project !-->
-
-<p class="head">Project </p>
-  <table class="table">
-    <thead class="head">
-      <tr>
-        <th>Project Name</th>
-        <th>Position</th>
-        <th>Task</th>
-      </tr>
-    </thead>
-    <tbody class="info">
-      <tr>
-        <td>KK</p></td>
-        <td>Dev</td>
-        <td>
-		
-				
-  
-
-		</td>
-	
-      </tr>
-      <tr>
-        <td>DD</td>
-        <td>Dev</td>
-        <td>click</td>
-	
-      </tr>
-      <tr>
-        <td>CC</td>
-        <td>Dev</td>
-        <td>click</td>
-      </tr>
-	  
-    </tbody>
-  </table>
- 
-    </tbody>
-  </table>
+<div class="list-group list-group-mine text-center" style="padding: 30px 100px;">
+	<h2 class="h-project" style="color:white;">Project</h2>
+  <a href="file:///D:/WebReport/ProjectInfo.html" class="list-group-item" href="/path"><strong>Project 1</strong></a>
+  <a href="file:///D:/WebReport/ProjectInfo.html" class="list-group-item" href="/path"><strong>Project 2</strong></a>
+  <a href="file:///D:/WebReport/ProjectInfo.html" class="list-group-item" href="/path"><strong>Project 3</strong></a>
 </div>
 
 
+	
+
+ 
 
   
 	
