@@ -1,42 +1,42 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
- <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>Personal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-	<link rel="stylesheet" href="css/Mycss.css"/>
-	<style>
-	a:active{
-    color: black;
-}
-	.navbar {
-	  padding-top: 0px;
-	  padding-bottom: 0px;
-	  border: 0;
-	  border-radius: 0;
-	  margin-bottom: 0;
-	  font-size: 14px;
-	  letter-spacing: 3px;
-		}	
-	iframe.location {
-	 	display: block;
-		margin-left: auto;
-		margin-right: auto;
-		height: 300px;
-		width: 60%;
+  <style>
+  body {
+      position: relative;
+	  background-color:#92D050;
+  }
+ 
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  
+  #section1 {padding-top:50px; padding-bottom:200px; height:auto;color: #fff; background-color: #151515;}
+  #section2 {padding-top:50px;height:auto;color: #fff; background-color: #92D050;}
+
+    <!---CSS Project info!-->
+  iframe.location {
+	
+		margin-left: 20%;
+		margin-right: 20%;
 		
-		}
-	img.userpic {
-	 	display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 15%;
+		width: 60%;
 		
 		}
 	h{ 
@@ -79,84 +79,64 @@
 		
 				
 			
-	p.mainhead{ 
-				margin-top:50px;
-				font-size: 30px;			
+	.h-project{ 			
 				font-weight: 30px;
 				text-align:center;
-				color:white;
 				
 		}
-				
-	
-	
-	 .bg-1 { 
-      background-color: #92D050; 
-      color: #ffffff;
+	h1.bold{font-weight:bold;}
+		
+		<!-- pesonalinfo!-->
+		#userpic {
+	 	display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 15%;
+		
 		}
-	.container-fluid-1 {
-      padding-top: 70px;
-      padding-bottom: 70px;
-	  background-color: #92D050;
+	<!--Personal info!-->
+	.panel{color:#151515;}
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-	.blue {
-    color: blue;
-}
-
-
-	</style>
- </head>
-  <body id="project" style="background-color:#151515;">
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
-<!-- First Container -->
-
-<div class="container-fluid-1">
-  <h class="margin">Daily Report</h>
- 
+<div class="container-fluid " style="background-color:#92D050;color:#fff;height:200px;">
+  <h1  class="bold" >Daily report</h1>
+  
 </div>
-  
-  
-  
-  
-  <!--nav!-->
-<div>
-  <nav class="navbar navbar-inverse">
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
-  
-    <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-      <li><a href="file:///D:/WebReport/DailyReport.html">Daily Report</a></li>
-      <li><a href="file:///D:/WebReport/test.html">Test</a></li>
-	  <li><a href="file:///D:/WebReport/Project.html">Project</a></li>
-	  <li  class="active"><a href="file:///D:/WebReport/Personal.html">Personal</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
+
+ 
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+			<li><a href="file:///D:/WebReport/index.html#">Home</a></li>
+          <li><a href="file:///D:/WebReport/DailyReport.html#">Daily Report</a></li>
+          <li><a href="file:///D:/WebReport/Project.html#">Project</a></li>
+		   <li><a href="file:///D:/WebReport/Personal.html#">Personal</a></li>
+
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="file:///D:/WebReport/test.html#">test <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="file:///D:/WebReport/test.html#">Test-1</a></li>
+              <li><a href="#section42">Section 4-2</a></li>
+            </ul>
+          </li>
+        </ul>  
+      </div>
+    </div>
   </div>
-</nav>
-</div>
+</nav>    
 
-
+<div id="section1" class="container-fluid">
 
 
 <!--Member info!-->
 
 <div class="container">
-<p class="mainhead" >Personal</p>
+<h2 class="text-center" style="color:#fff; font-weight:bold;">Personal </h2>
  
- <img class="userpic" src="userpic.png" style="width:15%; ">
+ <img  class="userpic" src="userpic.png" style="width:20%; margin-left:40%; margin-right:40%; margin-top:30px;  ">
 
    
 <p class="head">Name</p> 
@@ -166,55 +146,90 @@
 
 
 
+</div>
 
 <!--Project !-->
-
+<div class="container" style="width:50%;">
 <p class="head">Project </p>
-  <table class="table">
+  
+  <table class="table" >
     <thead class="head">
       <tr>
-        <th>Project Name</th>
-        <th>Position</th>
+        <th style="width:50%;" >Project Name</th>
         <th>Task</th>
       </tr>
     </thead>
     <tbody class="info">
       <tr>
-        <td>KK</p></td>
-        <td>Dev</td>
-        <td>
+        <td>Project Umbrella</p></td>
+   
+		 <!--(in table) task!-->  <td>   
+			<div class="panel-group" style=" width:50%; ">
+			  <div class="panel panel-default" style=" background-color:#151515; border-color:#151515; color:white;">
+				<a style="color:#ffff; font-weight:bold;" data-toggle="collapse" href="#collapse1">View Task</a>
+				<div id="collapse1" class="panel-collapse collapse" >
+				  <div class="panel-body" ">task1 task2 task3</div>
+				</div>
+			  </div>
+			</div>
+		 <!--(in table) task!--> </td>
+	
 		
 				
   
 
-		</td>
+	
 	
       </tr>
       <tr>
-        <td>DD</td>
-        <td>Dev</td>
-        <td>click</td>
+        <td>Project brella</td>
+        
+         <!--(in table) task!-->  <td>   
+			<div class="panel-group" style=" width:50%; ">
+			  <div class="panel panel-default" style=" background-color:#151515; border-color:#151515; color:white;">
+				<a style="color:#ffff; font-weight:bold;" data-toggle="collapse" href="#collapse2">View Task</a>
+				<div id="collapse2" class="panel-collapse collapse" >
+				  <div class="panel-body" ">task1 task2 task3</div>
+				</div>
+			  </div>
+			</div>
+		 <!--(in table) task!--> </td>
+	
 	
       </tr>
       <tr>
-        <td>CC</td>
-        <td>Dev</td>
-        <td>click</td>
+        <td>Project A A A</td>
+      
+         <!--(in table) task!-->  <td>   
+			<div class="panel-group" style=" width:50%; ">
+			  <div class="panel panel-default" style=" background-color:#151515; border-color:#151515; color:white;">
+				<a style="color:#ffff; font-weight:bold;" data-toggle="collapse" href="#collapse3">View Task</a>
+				<div id="collapse3" class="panel-collapse collapse" >
+				  <div class="panel-body" ">task1 task2 task3</div>
+				</div>
+			  </div>
+			</div>
+		 <!--(in table) task!--> </td>
+	
       </tr>
 	  
     </tbody>
   </table>
  
-    </tbody>
-  </table>
+
+</div>
 </div>
 
 
 
-  
-	
-	
 
-	
-  </body>
-<html>
+
+
+<div id="section2" class="container-fluid">
+  <h1>End</h1>
+
+</div>
+
+
+</body>
+</html>
