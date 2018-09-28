@@ -7,95 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="Webreport.css">
   <style>
-  body {
-      position: relative;
-	  background-color:#92D050;
-  }
  
-  .affix {
-      top:0;
-      width: 100%;
-      z-index: 9999 !important;
-  }
-  .navbar {
-      margin-bottom: 0px;
-  }
-
-  .affix ~ .container-fluid {
-     position: relative;
-     top: 50px;
-  }
-  
-  #section1 {padding-top:50px; padding-bottom:200px; height:auto;color: #fff; background-color: #151515;}
-  #section2 {padding-top:50px;height:auto;color: #fff; background-color: #92D050;}
-
-    <!---CSS Project info!-->
-  iframe.location {
 	
-		margin-left: 20%;
-		margin-right: 20%;
-		
-		width: 60%;
-		
-		}
-	h{ 
-		padding-top: 20px;
-		padding-bottom: 20px;
-		font-size:40px;
-		color:white;
-		margin-left:10px;
-		}
-	p {
-		font-size: 14px;
-		
-		}
-		
-	p.head {	
-		margin-top: 30px;
-		font-size: 14px;
-		font-weight: bold;
-		color:#92D050; 
-		text-align:center;
-		white-space: nowrap;
-	}
-	p.info {
-		font-size: 14px;
-		color:#FFFF;
-		font-weight: normal;
-		text-align:center;
-		white-space: nowrap;
-	}
-	thead.head {
-		font-size: 14px;
-		color:#92D050;
-		font-weight: normal;
-	}
-	tbody.info {
-		font-size: 14px;
-		color:#FFFF;
-		font-weight: normal;
-	}
-		
-				
-			
-	.h-project{ 			
-				font-weight: 30px;
-				text-align:center;
-				
-		}
-	h1.bold{font-weight:bold;}
-		
-		<!-- pesonalinfo!-->
-		#userpic {
-	 	display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 15%;
-		
-		}
-	<!--Personal info!-->
-	.panel{color:#151515;}
   </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -105,6 +20,8 @@
   
 </div>
 
+
+<!---------------------------------------nav bar!------------------------------------------->
 <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
 
@@ -122,11 +39,18 @@
               <li><a href="#section42">Section 4-2</a></li>
             </ul>
           </li>
-        </ul>  
+        </ul>
+			<ul class="nav navbar-nav navbar-right">
+			    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+			  <li><a href="#"><span class="glyphicon glyphicon-plus""></span> Sign Up</a></li>
+			  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			   <!--<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>!-->
+			</ul>
       </div>
     </div>
   </div>
 </nav>    
+<!---------------------------------------nav bar!------------------------------------------->   
 
 <div id="section1" class="container-fluid">
 
@@ -139,11 +63,14 @@
  <img  class="userpic" src="userpic.png" style="width:20%; margin-left:40%; margin-right:40%; margin-top:30px;  ">
 
    
-<p class="head">Name</p> 
+<p class="head"><span class="glyphicon glyphicon-user"></span>Name</p> 
 <p class="info">John Jat(Ja)</p> 
-<p class="head">Job position</p>
-<p class="info">Developer</p> 
-
+<p class="head"><span class="glyphicon glyphicon-briefcase"></span>Job position</p>
+<p class="info">Developer</p>
+<p class="head"><span class="glyphicon glyphicon-envelope"></span>Email</p> 
+<p class="info">JohnJat@hotmail.com</p> 
+<p class="head"><span class="glyphicon glyphicon-earphone"></span>Contact Number </p>
+<p class="info">0911501112</p>  
 
 
 </div>
@@ -216,8 +143,9 @@
     </tbody>
   </table>
  
-
+<button id="btnHistory" type="button" class="btn">History report</button>
 </div>
+
 </div>
 
 
