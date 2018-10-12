@@ -15,178 +15,98 @@
 	<link rel="stylesheet" href="css/Mycss.css"/>
 	<link rel="stylesheet" href="Webreport.css">
   <style>
-  body {
-      position: relative; 
-	  	  background-color:#92D050;
-  }
-  
-  .affix {
-      top:0;
-      width: 100%;
-      z-index: 9999 !important;
-  }
-  .navbar {
-      margin-bottom: 0px;
-  }
-
-  .affix ~ .container-fluid {
-     position: relative;
-     top: 50px;
-  }
-  
-  #section1 {padding-top:0px;  padding-bottom:600px; height:auto;color: #fff; background-color: #151515;}
-  #section2 {padding-top:50px;height:auto;color: #fff; background-color: #92D050;}
-
-  
-    <!---CSS Project info!-->
-  iframe.location {
-	
-		margin-left: 20%;
-		margin-right: 20%;
-		
-		width: 60%;
-		
-		}
-	h{ 
-		padding-top: 20px;
-		padding-bottom: 20px;
-		font-size:40px;
-		color:white;
-		margin-left:10px;
-		}
-	p {
-		font-size: 14px;
-		
-		}
-		
-	p.head {	
-		margin-top: 30px;
-		font-size: 14px;
-		font-weight: bold;
-		color:#92D050; 
-		text-align:center;
-		white-space: nowrap;
-	}
-	p.info {
-		font-size: 14px;
-		color:#FFFF;
-		font-weight: normal;
-		text-align:center;
-		white-space: nowrap;
-	}
-	thead.head {
-		font-size: 14px;
-		color:#92D050;
-		font-weight: normal;
-	}
-	tbody.info {
-		font-size: 14px;
-		color:#FFFF;
-		font-weight: normal;
-	}
-		
-				
-			
-	.h-project{ 			
-				font-weight: 30px;
-				text-align:center;
-				
-		}
-	h1.bold{font-weight:bold;}
-	Searchbar {padding-left:20px;}
+ 
   </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body >
 
-<div class="container-fluid " style="background-color:#92D050;color:#fff;height:200px;">
-  <h1 class="bold">Daily report</h1>
-  
-</div>
-
-<!---------------------------------------nav bar!------------------------------------------->
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-  <div class="container-fluid">
-
- 
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-			<li><a href="file:///D:/WebReport/index.html#">Home</a></li>
-          <li><a href="file:///D:/WebReport/DailyReport.html#">Daily Report</a></li>
-          <li><a href="file:///D:/WebReport/Project.html#">Project</a></li>
-		   <li><a href="file:///D:/WebReport/Personal.html#">Personal</a></li>
-
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="file:///D:/WebReport/test.html#">test <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="file:///D:/WebReport/test.html#">Test-1</a></li>
-              <li><a href="#section42">Section 4-2</a></li>
-            </ul>
-          </li>
-        </ul>
-			<ul class="nav navbar-nav navbar-right">
-			    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			   <!--<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>!-->
-			</ul>
-      </div>
-    </div>
-  </div>
-</nav>    
-<!---------------------------------------nav bar!------------------------------------------->
 
 <div id="section1" class="container-fluid">
 
 
 <!--dailyreport select date-->	
-    <div class="well well-sm" style=" background-color:#FFFF; color:#151515;">
-	<topic>Daily</topic>
-	<Searchbar id="datetimepicker4" class="input-append">
-    <input data-format="dd-MM-yyyy" type="text" style="height:25px; margin:5px;"></input>  
-    <span class="add-on" style="height:25px; weight:25;  margin-top:5px; margin-bottom:5px; " >
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar" s">
+    <div class="tab" >
+	</br>
+	<div class="head"> Daily</div>
+	<br>
+	<div id="datetimepicker4" class="input-append">
+    <input data-format="dd-MM-yyyy" type="text" style="height:25px; width:170px; margin:5px;"></input>  
+    <span class="add-on" style="height:25px; width:25px; margin-left:5px; margin-top:5px; margin-bottom:5px; " >
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar" style="margin-bottom:5px;">
       </i>
     </span>
-	</Searchbar>
+	</div>
 	
-	<Searchbar>
-	<label class="radio-inline"><input type="radio" name="optradio" checked>Weakly</label>
+	<div>
+	<label class="radio-inline"><input type="radio" name="optradio" checked>Weekly</label>
+	<!--<div2 class="form-group">
+      
+	  <label id ="topic" for="selmonth">Monthly (select one):</label>
+      <select class="form-control" id="selmonth">
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+		<option>May</option>
+		<option>June</option>
+		<option>July</option>
+		<option>August</option>
+		<option>September</option>
+		<option>October</option>
+		<option>November</option>
+		<option>December</option>
+      </select>
+      
+    </div2>!-->
 	<label class="radio-inline"><input type="radio" name="optradio">Monthly</label>
 	<label class="radio-inline"><input type="radio" name="optradio">Yearly</label>
-	</Searchbar>
+	</div>
 	<!--sort! by -->
-	<Searchbar>Sort by</Searchbar>
-			<div2 class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-				Date
-				<span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<li><a href="#" data-value="Username">Username</a></li>
-					<li><a href="#" data-value="Location">Location</a></li>
-					<li><a href="#" data-value="Project">Project</a></li>
-					
-				  </ul>
-			</div2>
+	<br>
+	<div class="head">Sort by</div>
+				<br>
+		<div class="form-group">
+		  <label for="sel1">Select list (select one):</label>
+		  <select class="form-control" id="selsort">
+			<option>Date</option>
+			<option>Username</option>
+			<option>Location</option>
+			<option>Project</option>
+		  </select>
+		 </div>
+	<button  type="button" class="btn btn-primary" style="background-color:#0099cc;">View report </button>
+	<br>		
 	
-	<button-view type="button" class="btn">View report </button-view>
+	
 	<!--search!-->
-	<Searchbar>Search</Searchbar>
-	<div2 class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				All
-				<span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<li><a href="#" data-value="Project">All</a></li>
-					<li><a href="#" data-value="Project">Date</a></li>
-					<li><a href="#" data-value="Username">Username</a></li>
-					<li><a href="#" data-value="Location">Location</a></li>
-					<li><a href="#" data-value="Project">Project</a></li>
-				  </ul>
-			</div2>
-	<input type="text" style="height:25px; margin-top:5px;" ></input>	
-	 <a href="#" style="color:green;">
-          <span class="glyphicon glyphicon-search " style="font-size: 20px; top:5px; color:green"></span>
+	<br><br>
+	
+	<div class="head">Search</div>
+			  <br>
+	
+		<div class="form-group">
+			  <label for="sel1">Select list (select one):</label>
+			  <select class="form-control" id="selsearch">
+				<option>All</option>
+				<option>Date</option>
+				<option>Username</option>
+				<option>Location</option>
+				<option>Project</option>
+			  </select>
+		 </div>
+		 
+		 
+	<form medthod="POST">
+	<input type="text" name="SearchReport" id="inputsearch" ></input>	
+	<input type="submit">
+	</form>
+	 
+	 
+	 
+	 <a href="#" style="color:#566573;">
+          <span id="searchbtn" class="glyphicon glyphicon-search " ></span>
+	
+			
 	</div>
 	
     <script type="text/javascript"
@@ -208,12 +128,7 @@
 		});
 	  });
 	</script>
-	<script type="text/javascript">
-			$(".dropdown-menu li a").click(function(){
-			  $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-			  $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-			});
-	</script>
+
 
 	
 

@@ -9,143 +9,127 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="Webreport.css">
   <style>
- 
+
 	
   </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-<div class="container-fluid " style="background-color:#92D050;color:#fff;height:200px;">
-  <h1  class="bold" >Daily report</h1>
-  
-</div>
-
-
-<!---------------------------------------nav bar!------------------------------------------->
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-  <div class="container-fluid">
-
+<body >
  
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-			<li><a href="file:///D:/WebReport/index.html#">Home</a></li>
-          <li><a href="file:///D:/WebReport/DailyReport.html#">Daily Report</a></li>
-          <li><a href="file:///D:/WebReport/Project.html#">Project</a></li>
-		   <li><a href="file:///D:/WebReport/Personal.html#">Personal</a></li>
-
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="file:///D:/WebReport/test.html#">test <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="file:///D:/WebReport/test.html#">Test-1</a></li>
-              <li><a href="#section42">Section 4-2</a></li>
-            </ul>
-          </li>
-        </ul>
-			<ul class="nav navbar-nav navbar-right">
-			    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-plus""></span> Sign Up</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			   <!--<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>!-->
-			</ul>
-      </div>
-    </div>
-  </div>
-</nav>    
-<!---------------------------------------nav bar!------------------------------------------->   
 
 <div id="section1" class="container-fluid">
 
 
 <!--Member info!-->
-
-<div class="container">
-<h2 class="text-center" style="color:#fff; font-weight:bold;">Personal </h2>
+<div class="column  side">
+<div class="box-profile box-shadow text-personal">
+<h2 id="HeadBox" class="text-center" >Personal </h2>
  
- <img  class="userpic" src="userpic.png" style="width:20%; margin-left:40%; margin-right:40%; margin-top:30px;  ">
+ <img  id="userpic"  src="userpic.png"  "></img>
 
    
 <p class="head"><span class="glyphicon glyphicon-user"></span>Name</p> 
-<p class="info">John Jat(Ja)</p> 
+<p >John Doe(John)</p> 
 <p class="head"><span class="glyphicon glyphicon-briefcase"></span>Job position</p>
-<p class="info">Developer</p>
+<p >Developer</p>
 <p class="head"><span class="glyphicon glyphicon-envelope"></span>Email</p> 
-<p class="info">JohnJat@hotmail.com</p> 
+<p >John.D@hotmail.com</p> 
 <p class="head"><span class="glyphicon glyphicon-earphone"></span>Contact Number </p>
-<p class="info">0911501112</p>  
-
-
+<p >091-1501112</p>  
+<br>
 </div>
-
+</div>
 <!--Project !-->
-<div class="container" style="width:50%;">
-<p class="head">Project </p>
-  
-  <table class="table" >
-    <thead class="head">
-      <tr>
-        <th style="width:50%;" >Project Name</th>
-        <th>Task</th>
-      </tr>
-    </thead>
-    <tbody class="info">
-      <tr>
-        <td>Project Umbrella</p></td>
-   
-		 <!--(in table) task!-->  <td>   
-			<div class="panel-group" style=" width:50%; ">
-			  <div class="panel panel-default" style=" background-color:#151515; border-color:#151515; color:white;">
-				<a style="color:#ffff; font-weight:bold;" data-toggle="collapse" href="#collapse1">View Task</a>
-				<div id="collapse1" class="panel-collapse collapse" >
-				  <div class="panel-body" ">task1 task2 task3</div>
-				</div>
-			  </div>
-			</div>
-		 <!--(in table) task!--> </td>
-	
-		
+	<div class="column middle">
+		<div class="box-member-project ">
+		<h2  id="HeadBox" class="text-center" >Project </h2>
+		  
+		  <table class="table text-black" >
+			<thead class="head">
+			  <tr>
+				<th style="width:50%;" >Project Name</th>
+				<br>
+				<th>Task</th>
+			  </tr>
+			</thead>
+			<tbody class="text-black">
+			  <tr>
+				<td>Project A</td>
+		   
+			  <!--(in table) task!-->  <td>   
+					<div class="panel-group  ">
+					  <div class="panel panel-default " >
+					  <div class="panel-heading text-center ">
+						<a  id="ViewTask-btn"  data-toggle="collapse" href="#collapse11">View Task</a>
+						</div>
+						  <div id="collapse11" class="panel-collapse collapse" >
+						 <ul class="list-group">
+						  <li class="list-group-item">One</li>
+						  <li class="list-group-item">Two</li>
+						  <li class="list-group-item">Three</li>
+						</ul>
+						  
+						</div>
+					  </div>
+					</div>
+				 <!--(in table) task!--> </td>
+			
 				
-  
+						
+		  
 
-	
-	
-      </tr>
-      <tr>
-        <td>Project brella</td>
-        
-         <!--(in table) task!-->  <td>   
-			<div class="panel-group" style=" width:50%; ">
-			  <div class="panel panel-default" style=" background-color:#151515; border-color:#151515; color:white;">
-				<a style="color:#ffff; font-weight:bold;" data-toggle="collapse" href="#collapse2">View Task</a>
-				<div id="collapse2" class="panel-collapse collapse" >
-				  <div class="panel-body" ">task1 task2 task3</div>
-				</div>
-			  </div>
-			</div>
-		 <!--(in table) task!--> </td>
-	
-	
-      </tr>
-      <tr>
-        <td>Project A A A</td>
-      
-         <!--(in table) task!-->  <td>   
-			<div class="panel-group" style=" width:50%; ">
-			  <div class="panel panel-default" style=" background-color:#151515; border-color:#151515; color:white;">
-				<a style="color:#ffff; font-weight:bold;" data-toggle="collapse" href="#collapse3">View Task</a>
-				<div id="collapse3" class="panel-collapse collapse" >
-				  <div class="panel-body" ">task1 task2 task3</div>
-				</div>
-			  </div>
-			</div>
-		 <!--(in table) task!--> </td>
-	
-      </tr>
-	  
-    </tbody>
-  </table>
- 
-<button id="btnHistory" type="button" class="btn">History report</button>
-</div>
-
+			
+			
+			  </tr>
+			  <tr>
+				<td>Project B</td>
+				
+				 <!--(in table) task!-->  <td>   
+					<div class="panel-group  ">
+					  <div class="panel panel-default " >
+					  <div class="panel-heading text-center ">
+						<a  id="ViewTask-btn"  data-toggle="collapse" href="#collapse2">View Task</a>
+						</div>
+						  <div id="collapse2" class="panel-collapse collapse bg-black" >
+						  <ul class="list-group">
+						  <li class="list-group-item">One</li>
+						  <li class="list-group-item">Two</li>
+						  <li class="list-group-item">Three</li>
+							</ul>
+						</div>
+					  </div>
+					</div>
+				 <!--(in table) task!--> </td>
+			
+			
+			  </tr>
+			  <tr>
+				<td>Project C</td>
+			  
+				 <!--(in table) task!-->  <td>   
+					<div class="panel-group  ">
+					  <div class="panel panel-default " >
+					  <div class="panel-heading text-center ">
+						<a  id="ViewTask-btn"  data-toggle="collapse" href="#collapse3">View Task</a>
+						</div>
+						  <div id="collapse3" class="panel-collapse collapse bg-black" >
+						  <ul class="list-group">
+						  <li class="list-group-item">One</li>
+						  <li class="list-group-item">Two</li>
+						  <li class="list-group-item">Three</li>
+							</ul>
+						</div>
+					  </div>
+					</div>
+				 <!--(in table) task!--> </td>
+			
+			  </tr>
+			  
+			</tbody>
+		  </table>
+			<button id="btnHistory" type="button" class="btn">History report</button>
+		 
+		</div>
+	</div>
 </div>
 
 

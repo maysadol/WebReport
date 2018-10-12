@@ -1,6 +1,7 @@
 body {
       position: relative;
 	  background-color:#92D050;
+	  
   }
  
   .affix {
@@ -27,7 +28,23 @@ body {
 		font-size: 14px;
 		
 		}
+		
+	.column {
+    float: left;
+    padding: 10px;
+	}
+
+	/* Left and right column */
+	.column.side {
+		width: 25%;
+	}
+
+	/* Middle column */
+	.column.middle {
+		width: 75%;
+	}
 	#head-project-personalinfo{font-size:20px; color:92D050; display: inline-block;}
+	
 	.text-personal{color:#151515; 
 				text-align:center;
 				}
@@ -39,17 +56,36 @@ body {
 	.box-profile {
 		background-color:#fff;
 		width: 300px;
+		height:600px;
 		padding: 25px;
-		margin: 25px;
+		margin-top: 15px;
+		margin-left: 10px;
 		display: inline-block;
+		position: sticky;
+		box-shadow: 10px 10px 10px black;
 	}
-	.box-project {
+	.box-member-project {
 		background-color:#fff;
-		width: 400px;
+		width:90%;
+		height:auto;
 		padding: 25px;
-		margin: 25px;
+		margin-top:15px;
+		margin-left: 10px;
 		display: inline-block;
+		box-shadow: 10px 10px 10px black;
+		
 	}
+	  .box-Personal {
+		background-color:#fff;
+		color:#151515;
+		width: 60%;
+		height:auto;
+		padding: 25px;
+		margin-left: 20%;
+		display: inline-block;
+		box-shadow: 10px 10px 10px black;
+	}
+	  
   .bg-black{background-color:black;}
   .ViewTask-btn{width:200px; }
   #ViewTask-btn{ color:#151515;}
@@ -58,9 +94,9 @@ body {
   #ViewTask-btn:active{color:#ffff; font-weight:bold; text-align:center;}
   #ViewTask-btn:visited{color:#ffff; font-weight:bold; text-align:center;}
   #usernameicon{color:#92D050; margin-right:5px; font-size: 12px;}
-  #section1 {padding-top:50px; padding-bottom:200px; height:auto;color: #fff; background-color: #151515;}
+  #section1 {padding-top:50px; padding-bottom:200px; height:auto;color: #fff; background-color: #333333;}
   #section2 {padding-top:50px;height:auto;color: #fff; background-color: #92D050;}
-
+  #Menu-bar {background-color:#0099ff;}
     /*CSS Project info!*/
   iframe.location {
 	
@@ -130,7 +166,7 @@ body {
 		
 	}
 	#btnHistory:hover {color:#92D050; 
-		background-color:#fff;
+		background-color:#f2f2f2;
 		
 		margin-left:40%
 		}
@@ -139,3 +175,217 @@ body {
 	
 	.glyphicon-ok {color:Green; }
 	.glyphicon-remove {color:red;}
+	/*Add Project*/
+	 #SubmitProject{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#0099ff;
+				background-color:#0099ff;
+				box-shadow: 5px 3px 30px grey;}
+	#SubmitProject:hover{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#92D050;
+				background-color:#92D050;
+				box-shadow: 5px 3px 30px grey;}
+	.box-addproject {
+		background-color:#fff;
+		color:#151515;
+		width: 60%;
+		height:auto;
+		padding: 25px;
+		margin-left: 20%;
+		display: inline-block;
+	}
+	#HeadBox { 
+			color:#92D050;
+			text-shadow: 2px 2px 5px black;
+		}
+
+	/*Sigup*/
+	 #SubmitSignup{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#0099ff;
+				background-color:#0099ff;
+				box-shadow: 5px 3px 30px grey;}
+	#SubmitSignup:hover{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#92D050;
+				background-color:#92D050;
+				box-shadow: 5px 3px 30px grey;}
+	.box-Signup {
+		background-color:#fff;
+		color:#151515;
+		width: 60%;
+		height:auto;
+		padding: 25px;
+		margin-left: 20%;
+		display: inline-block;
+		box-shadow: 10px 10px 10px black;
+	}
+	#HeadBox { 
+			color:#92D050;
+			text-shadow: 2px 2px 3px black;
+			letter-spacing: 2px;
+		}
+	/*Login*/
+	 #loginbtn{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#0099ff;
+				background-color:#0099ff;
+				box-shadow: 5px 5px 5px black;}
+	#loginbtn:hover{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#92D050;
+				background-color:#92D050;
+				box-shadow: 10px 10px 10px black;}
+	.box-login {
+		background-color:#fff;
+		color:#151515;
+		width: 60%;
+		height:auto;
+		padding: 25px;
+		margin-left: 20%;
+		display: inline-block;
+		box-shadow: 10px 10px 10px black;
+	}
+	/*Dayily Report*/
+	Searchbar {padding-left:20px;}
+	
+	
+	
+  .tab {
+   
+	 padding-left: 10px;
+	 padding-top: 0px;
+	 padding-right: 0px;
+	 padding-bottom: 10px;
+    border: 0px solid #566573;
+    background-color:#454545;
+    width: 100%;
+    height: 1200px;
+  min-height: 100% !important;
+	}
+	.tab .head {
+    display: block;
+    background-color: inherit;
+	background-color:#92D050;  
+    color: White;
+    padding: 20px 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+	
+    
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+	#datetimepicker{width:200px;
+	display: inline-block;}
+	#selsort{width:200px;}
+	#selsearch{width:200px;}
+	#inputsearch{height:25px; width:200px; margin-top:5px; }
+	#searchbtn {font-size: 20px; top:5px; color:#92D050; margin-left:10px;}
+	#topic {font-size:14px;
+	display: inline-block;
+	font-weight:bold;}
+	.block-line{display: inline-block;}
+	.float-right{float:right;}
+	/*Project*/
+	Searchbar {padding-left:20px;}
+	#AddProject {background-color:#33ccff;
+				border-color:#33ccff;
+				color:#fff;
+			    float:right;}
+	.box-Project {
+		background-color:#fff;
+		color:#151515;
+		width: 60%;
+		height:auto;
+		padding: 25px;
+		margin-left: 20%;
+		display: inline-block;
+		box-shadow: 10px 10px 10px black;
+	}			 
+	#ListProject{pading-top:30px; padding-left:5%; padding-right:5%; color:#fff; background-color:#fff;}
+	#ListProject a{ color:#151515; background-color:#f2f2f2; border-color:#f2f2f2;}
+	#ListProject a:Hover{ color:#151515; background-color:#d9d9d9; border-color:#d9d9d9;}
+	
+	
+  .tab {
+    float: right;
+	 padding-left: 10px;
+	 padding-top: 0px;
+	 padding-right: 0px;
+	 padding-bottom: 10px;
+    border: 0px solid #566573;
+    background-color:#454545;
+    width: 20%;
+    height: 1200px;
+  min-height: 100% !important;
+	}
+	.tab .head {
+    display: block;
+    background-color: inherit;
+	background-color:#92D050;  
+    color: White;
+    padding: 20px 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+	
+    
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+	#datetimepicker{width:200px;
+	display: inline-block;}
+	#selsort{width:200px;}
+	#selsearch{width:200px;}
+	#inputsearch{height:25px; width:200px; margin-top:5px; }
+	#searchbtn {font-size: 20px; top:5px; color:#92D050; margin-left:10px;}
+	#topic {font-size:14px;
+	display: inline-block;
+	font-weight:bold;}
+	.block-line{display: inline-block;}
+	.float-right{float:right;}
+	
+									

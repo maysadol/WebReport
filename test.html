@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Personal</title>
@@ -7,156 +7,195 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="Webreport.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/Mycss.css"/>
+	<link rel="stylesheet" href="Webreport.css">
   <style>
+		.column.side {
+			width: 20%;
+			background-color:black;
+		}
 
+		.column.middle {
+			width: 80%;
+		}
 	
   </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body >
 
-<div class="container-fluid " style="background-color:#92D050;color:#fff;height:200px;">
-  <h1  class="bold" >Daily report</h1>
-  
-</div>
-
-
-<!---------------------------------------nav bar!------------------------------------------->
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-  <div class="container-fluid">
-
- 
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-			<li><a href="file:///D:/WebReport/index.html#">Home</a></li>
-          <li><a href="file:///D:/WebReport/DailyReport.html#">Daily Report</a></li>
-          <li><a href="file:///D:/WebReport/Project.html#">Project</a></li>
-		   <li><a href="file:///D:/WebReport/Personal.html#">Personal</a></li>
-
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="file:///D:/WebReport/test.html#">test <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="file:///D:/WebReport/test.html#">Test-1</a></li>
-              <li><a href="#section42">Section 4-2</a></li>
-            </ul>
-          </li>
-        </ul>
-			<ul class="nav navbar-nav navbar-right">
-			    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-plus""></span> Sign Up</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			   <!--<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>!-->
-			</ul>
-      </div>
-    </div>
-  </div>
-</nav>    
-<!---------------------------------------nav bar!------------------------------------------->   
 
 <div id="section1" class="container-fluid">
-
-
-<!--Member info!-->
-
-<div class="box-profile box-shadow text-personal">
-<h2 class="text-center text-shadow text-green" >Personal </h2>
- 
- <img  id="userpic"  src="userpic.png"  "></img>
-
-   
-<p class="head"><span class="glyphicon glyphicon-user"></span>Name</p> 
-<p >John Jat(Ja)</p> 
-<p class="head"><span class="glyphicon glyphicon-briefcase"></span>Job position</p>
-<p >Developer</p>
-<p class="head"><span class="glyphicon glyphicon-envelope"></span>Email</p> 
-<p >JohnJat@hotmail.com</p> 
-<p class="head"><span class="glyphicon glyphicon-earphone"></span>Contact Number </p>
-<p >091-1501112</p>  
-<br>
-</div>
-
-<!--Project !-->
-<div class="box-project  box-shadow" style="width:50%;">
-<p class="head">Project </p>
-  
-  <table class="table text-black" >
-    <thead class="head">
-      <tr>
-        <th style="width:50%;" >Project Name</th>
-        <th>Task</th>
-      </tr>
-    </thead>
-    <tbody class="text-black">
-      <tr>
-        <td>Project Umbrella</td>
-   
-	  <!--(in table) task!-->  <td>   
-			<div class="panel-group  ">
-			  <div class="panel panel-default " >
-			  <div class="panel-heading text-center ">
-				<a  id="ViewTask-btn"  data-toggle="collapse" href="#collapse11">View Task</a>
-				</div>
-				  <div id="collapse11" class="panel-collapse collapse bg-black" >
-				  <div class="panel-body text-white ">task1 task2 task3</div>
-				</div>
-			  </div>
-			</div>
-		 <!--(in table) task!--> </td>
 	
-		
-				
-  
+	<div class="row">
 
-	
-	
-      </tr>
-      <tr>
-        <td>Project brella</td>
-        
-         <!--(in table) task!-->  <td>   
-			<div class="panel-group  ">
-			  <div class="panel panel-default " >
-			  <div class="panel-heading text-center ">
-				<a  id="ViewTask-btn"  data-toggle="collapse" href="#collapse2">View Task</a>
-				</div>
-				  <div id="collapse2" class="panel-collapse collapse bg-black" >
-				  <div class="panel-body text-white ">task1 task2 task3</div>
-				</div>
-			  </div>
-			</div>
-		 <!--(in table) task!--> </td>
-	
-	
-      </tr>
-      <tr>
-        <td>Project A A A</td>
-      
-         <!--(in table) task!-->  <td>   
-				<div class="panel-group  ">
-			  <div class="panel panel-default " >
-			  <div class="panel-heading text-center ">
-				<a  id="ViewTask-btn"  data-toggle="collapse" href="#collapse3">View Task</a>
-				</div>
-				  <div id="collapse3" class="panel-collapse collapse bg-black" >
-				  <div class="panel-body text-white ">task1 task2 task3</div>
-				</div>
-			  </div>
-			</div>
-		 <!--(in table) task!--> </td>
-	
-      </tr>
-	  
-    </tbody>
+	  <div class="column middle">
+		<h2>Report</h2>
+			<table class="table" style="width:90%; margin-left:5%; margin-top:20px;">
+				<thead>
+				  <tr>
+					<th style="width:10%">time</th>
+					<th style="width:15%">user</th>
+					<th style="width:25%">location</th>
+					<th style="width:25%">project</th>
+					<th style="width:25%">task</th>
+
+				  </tr>
+				</thead>
+				<tbody id="Report_Result">
+				  <tr>
+					<td class="time_report">2018-08-29 Time 15:41</td>
+					<td class="username_report">username</td>
+					<td class="location_report">Paris</td>
+					<td class="project_report">Projecttttt</td>
+					<td class="task_report">taskkkk</td>
+				  </tr>
+
+				</tbody>
   </table>
+	  </div>
+      <div class="column side">
+
+
+          <!--dailyreport select date-->
+          </br>
+          <div class="head"> Daily</div>
+          <br>
+          <div id="datetimepicker4" class="input-append">
+              <input data-format="dd-MM-yyyy" type="text" style="height:25px; width:170px; margin:5px;"></input>
+              <span class="add-on" style="height:25px; width:25px; margin-left:5px; margin-top:5px; margin-bottom:5px; ">
+                  <i data-time-icon="icon-time" data-date-icon="icon-calendar" style="margin-bottom:5px;">
+                  </i>
+              </span>
+          </div>
+
+          <div>
+              <label class="radio-inline"><input type="radio" name="optradio" checked>Weekly</label>
+
+              <label class="radio-inline"><input type="radio" name="optradio">Monthly</label>
+              <label class="radio-inline"><input type="radio" name="optradio">Yearly</label>
+          </div>
+          <!--sort! by -->
+          <br>
+          <div class="head">Sort by</div>
+          <br>
+          <div class="form-group">
+              <label for="sel1">Select list (select one):</label>
+              <select class="form-control" id="selsort">
+                  <option>Date</option>
+                  <option>Username</option>
+                  <option>Location</option>
+                  <option>Project</option>
+              </select>
+          </div>
+          <button type="button" class="btn btn-primary" style="background-color:#0099cc;">View report </button>
+          <br>
+
+
+          <!--search!-->
+          <br><br>
+
+          <div class="head">Search</div>
+          <br>
+
+          <div class="form-group">
+              <label for="sel1">Select list (select one):</label>
+              <select class="form-control" id="selsearch">
+                  <option>All</option>
+                  <option>Date</option>
+                  <option>Username</option>
+                  <option>Location</option>
+                  <option>Project</option>
+              </select>
+          </div>
+
+
+
+          <input type="text" name="SearchReport" id="inputsearch"></input>
+          <input id="search_report" type="button">
+          <a href="#" style="color:#566573;">
+              <span id="searchbtn" class="glyphicon glyphicon-search "></span>
+
+
+
+
+
+
+
+
+              <script type="text/javascript"
+                      src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+              </script>
+              <script type="text/javascript"
+                      src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+              </script>
+              <script type="text/javascript"
+                      src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+              </script>
+              <script type="text/javascript"
+                      src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+              </script>
+              <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker4').datetimepicker({
+                          pickTime: false
+                      });
+                  });
+
+                  $("#search_report").click(function () {
+                      $.ajax({
+                          type: 'GET',
+                          url: 'http://127.0.0.1:18088/api/botservice/location/search',
+                          data: { location: 'e' },
+                          success: function (data) {
+                              dataJson = $.parseJSON(data);
+                              var result = "";
+                              var d;
+
+                              for (i = 0; i < dataJson.length; i++) {
+                                  d = new Date(0);
+                                  d.setUTCSeconds(dataJson[i].time.$date);
+                                  console.log(d);
+                                  result += "<tr>";
+                                  result += "<td class=\"time_report\">" + d.getDate() + " " + d.getMonth() + 1 + " " + d.getFullYear() + "</td>";
+                                  result += "<td class=\"username_report\">" + dataJson[i].user + "</td>";
+                                  result += "<td class=\"location_report\">" + dataJson[i].location + "</td>";
+                                  result += "<td class=\"project_report\">" + dataJson[i].project + "</td>";
+                                  result += "<td class=\"task_report\">" + dataJson[i].task + "</td>";
+                                  result += "</tr>";
+                              }
+                              alert("hello");
+                              $("#Report_Result").html(result);
+                          },
+                          error: function (err) {
+                              alert(err.status);
+                              console.log(err);
+                          }
+                      });
+                  });
+              </script>
+
+
+
+      </div>
+	</div>
+	
+	
+	
+	
+</div>
+   
+
+
+	
+
  
-<button id="btnHistory" type="button" class="btn">History report</button>
 </div>
-
-</div>
-
-
-
-
-
+  
 
 <div id="section2" class="container-fluid">
   <h1>End</h1>

@@ -9,53 +9,31 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link rel="stylesheet" href="Webreport.css">
   <style>
-  
+  .box-Personal {
+		background-color:#fff;
+		color:#151515;
+		width: 60%;
+		height:auto;
+		padding: 25px;
+		margin-left: 20%;
+		display: inline-block;
+		box-shadow: 10px 10px 10px black;
+		#inline{display: inline-block;}
+	}
+	
   </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body >
 
-<div class="container-fluid " style="background-color:#92D050;color:#fff;height:200px;">
-
-
-  <h1 class="bold">Daily report</h1>
-  
-</div>
-
-<!---------------------------------------nav bar!------------------------------------------->
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-  <div class="container-fluid">
-
- 
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-			<li><a href="file:///D:/WebReport/index.html#">Home</a></li>
-          <li><a href="file:///D:/WebReport/DailyReport.html#">Daily Report</a></li>
-          <li><a href="file:///D:/WebReport/Project.html#">Project</a></li>
-		   <li><a href="file:///D:/WebReport/Personal.html#">Personal</a></li>
-
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="file:///D:/WebReport/test.html#">test <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="file:///D:/WebReport/test.html#">Test-1</a></li>
-              <li><a href="#section42">Section 4-2</a></li>
-            </ul>
-          </li>
-        </ul>
-			<ul class="nav navbar-nav navbar-right">
-			    <li><a href="#"><span class="glyphicon glyphicon-user" style="color:gray;"></span> Profile</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			   <!--<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>!-->
-			</ul>
-      </div>
-    </div>
-  </div>
-</nav>    
-<!---------------------------------------nav bar!------------------------------------------->
 
 <div id="section1" class="container-fluid">
-<div class="container tbwidth">
- <h1 class="text-center">Personal</h1>
-           
+<div class="box-Personal">
+ 
+ <h2 id="HeadBox" class="text-center">Personal</h2>
+
+
+
+  
   <table class="table table-hover" style="margin-top:50px; ">
     <thead>
       <tr style="color:#92D050;">
@@ -63,25 +41,25 @@
         <th style="width:25%;">Firstname</th>
         <th style="width:25%;">Lastname</th>
         <th style="width:15%;">Lastest status</th>
-		 <th class="text-center" style="width:15%;">Daily report </th>
+		 <th  class="text-center" style="width:15%;">Daily report  </th>
       </tr>
     </thead>
     <tbody>
-      <tr onclick="window.location='file:///D:/WebReport/PersonalInfo.html#';">
+      <tr onclick="window.location='PersonalInfo.html';">
          <td>John.D</td>
 		<td>John</td>
         <td>Doe</td>
         <td>Today</td>
 		<td class="text-center" ><span class="glyphicon glyphicon-ok"></span></td>
       </tr>
-      <tr onclick="window.location='file:///D:/WebReport/PersonalInfo.html#';">
+      <tr onclick="window.location='PersonalInfo.html';">
          <td>Mary.M</td>
 		<td>Mary</td>
         <td>Moe</td>
         <td>Monday</td>
 		<td class="text-center" ><span class="glyphicon glyphicon-remove"></span></td>
       </tr>
-      <tr onclick="window.location='file:///D:/WebReport/PersonalInfo.html#';">
+      <tr onclick="window.location='PersonalInfo.html';">
          <td>July.D</td>
 		<td>July</td>
         <td>Dooley</td>
@@ -95,11 +73,14 @@
 
 </div>
 
+<br>
+
 
 <div id="section2" class="container-fluid">
   <h1 >End</h1>
 
 </div>
+
 
 
 </body>

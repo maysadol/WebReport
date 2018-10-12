@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<link rel="stylesheet" href="Webreport.css">
+  <style>
+ #Today{ 
+			margin-top:16px;
+			margin-bottom:20px;
+			font-size:14px;
+			color:#fff;
+			
+			
+		}	
+ 
+  </style>
+</head>
+<body >
+
+
+
+<!---------------------------------------nav bar!------------------------------------------->
+<nav id="Menu-Bar" class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
+
+ 
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+			<li><a href="home.html" target="mainFrame" >Home</a></li>
+          <li><a href="DailyReport.html" target="mainFrame" >Daily Report</a></li>
+          <li><a href="Project.html" target="mainFrame" >Project</a></li>
+		   <li><a href="Personal.html" target="mainFrame" >Personal</a></li>
+		   <li><a href="test.html" target="mainFrame" >Test</a></li>
+			
+        
+        </ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="Today"></li>
+			    <li><a href="Profile_edit.html" target="mainFrame"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+			  <li><a href="Signup.html" target="mainFrame"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
+			  <li><a href="login.html" target="mainFrame"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			   <!--<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>!-->
+			</ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+<!---------------------------------------nav bar!------------------------------------------->
+
+
+<script>
+var d = new Date();
+document.getElementById("Today").innerHTML = d.toDateString();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<link rel="stylesheet" href="Webreport.css">
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+	</script>
+  <style>
+  #SubmitSignup{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#0099ff;
+				background-color:#0099ff;
+				box-shadow: 5px 3px 30px grey;}
+#SubmitSignup:hover{
+				width:20%;
+				height:40px;
+				padding-top:8px;
+				margin-left:40%; 
+				margin-right:40%; 
+				font-size:16px;
+				font-weight: bold;
+				border-color:#92D050;
+				background-color:#92D050;
+				box-shadow: 5px 3px 30px grey;}
+	.box-addproject {
+		background-color:#fff;
+		color:#151515;
+		width: 60%;
+		height:auto;
+		padding: 25px;
+		margin-left: 20%;
+		display: inline-block;
+	}
+#HeadBox { 
+			color:#92D050;
+			text-shadow: 2px 2px 5px black;
+		}
+
+
+ 
+  </style>
+</head>
+<body >
+
+
+<div id="section1" class="container-fluid">
+ 
+ <div class="box-addproject">
+  <h2 id="HeadBox">Profile</h2>
+  <br>
+
+  <form>
+    <div class="form-group">
+      <label for="project_name">Username :</label>
+      <input type="text" class="form-control" id="project_name">
+    </div>
+    <div class="form-group">
+      <label for="project_company">Password:</label>
+      <input type="Password" class="form-control" id="project_company">
+    </div>
+	 <div class="form-group">
+      <label for="project_call">First name:</label>
+      <input type="text" class="form-control" id="project_call">
+    </div>
+	 <div class="form-group">
+      <label for="project_info">Last name:</label>
+      <input type="text" class="form-control" id="project_info">
+    </div>
+	 <div class="form-group">
+      <label for="project_Location">Email:</label>
+      <input type="text" class="form-control" id="project_Location">
+    </div>
+	 <div class="form-group">
+      <label for="project_Location">Contact number:</label>
+      <input type="number" class="form-control" id="project_Location">
+    </div>
+  </form>
+  
+  <a href="#" id="SubmitSignup" type="button" class="btn btn-primary">Create Account</a>
+</div> 
+
+</div>
+<div id="section2" class="container-fluid">
+  <h1>Section 2</h1>
+  
+</div>
+
+
+</body>
+</html>
