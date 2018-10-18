@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Add Project</title>
@@ -12,51 +12,126 @@
 	src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 	</script>
   <style>
-  
+      .alert-field {
+          color: red;
+      }   
 
  
   </style>
 </head>
 <body>
 
-<div id="section1" class="container-fluid">
- 
- <div class="box-addproject">
-  <h2 id="HeadBox">Add Project</h2>
-  <br>
+    <div id="section1" class="container-fluid">
 
-  <form>
-    <div class="form-group">
-      <label for="project_name">Project Name :</label>
-      <input type="text" class="form-control" id="project_name">
-    </div>
-    <div class="form-group">
-      <label for="project_company">Company:</label>
-      <input type="text" class="form-control" id="project_company">
-    </div>
-	 <div class="form-group">
-      <label for="project_call">Contact number:</label>
-      <input type="number" class="form-control" id="project_call">
-    </div>
-	 <div class="form-group">
-      <label for="project_info">Project information:</label>
-      <input type="text" class="form-control" id="project_info">
-    </div>
-	 <div class="form-group">
-      <label for="project_Location">Project location:</label>
-      <input type="text" class="form-control" id="project_Location">
-    </div>
-  </form>
-  
-  <a href="#" id="SubmitProject" type="button" class="btn btn-primary">Submit</a>
-</div> 
+        <div class="box-addproject">
+            <h2 id="HeadBox">Add Project</h2>
+            <br>
 
-</div>
-<div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
-  
-</div>
+      
+                <div class="form-group">
+                    <label for="project_name">Project Name :</label>
+                    <input type="text" class="form-control" id="project_name">
+
+                    <p class="alert-field" id="project_required"></p>
+                </div>
+                <div class="form-group">
+                    <label for="project_company">Company:</label>
+                    <input type="text" class="form-control" id="project_company">
+                    <p class="alert-field" id="company_required"></p>
+                </div>
+                <div class="form-group">
+                    <label for="project_call">Contact number:</label>
+                    <input type="number" class="form-control" id="project_call">
+                </div>
+                <div class="form-group">
+                    <label for="project_info">Project information:</label>
+                    <input type="text" class="form-control" id="project_info">
+                </div>
+                <div class="form-group">
+                    <label for="project_Location">Project location:</label>
+                    <input type="text" class="form-control" id="project_Location">
+                    <p class="alert-field" id="Location_required"></p>
+                </div>
+                 
+            <a href="#" id="SubmitProject" type="button" class="btn btn-primary" onclick="AddProjectCheck()">Submit</a>
+        </div>
+
+    </div>
+    <div id="section2" class="container-fluid">
+        <h1>Section 2</h1>
+
+    </div>
+   
+    <script>
+        function AddProjectCheck() {
+            var project_name, project_company, project_Location, project_required,Location_required,company_required;
+
+            var pass = true;
+            project_name = document.getElementById("project_name").value;
+            project_company = document.getElementById("project_company").value;
+            project_Location = document.getElementById("project_Location").value;
+           
+          
+            if (project_name == "") {
+                project_required = "Please enter project name.";
+                pass = false;
+            } else {
+                project_required = "";
+                
+            }
+            if (project_company == "") {
+                company_required = "Please enter company name.";
+                pass = false;
+            } else {
+                company_required = "";
+            }
+            if (project_Location == "") {
+                Location_required = "Please enter location.";
+                pass = false;
+            } else {
+                Location_required = "";
+            }
+            document.getElementById("project_required").innerHTML = project_required;
+            document.getElementById("Location_required").innerHTML = Location_required;
+            document.getElementById("company_required").innerHTML = company_required;
+            if (pass == true) { AddProject(); alert("addproject"); }
+            else { alert("Please fill out this form completely.")}
+        }
+    </script>
+
+<script>
+    /* search report */
+   function AddProject() {
+        var project, company, contact, info, location, url
+        
+        url = "http://127.0.0.1:18088/api/botservice/project/add_new_project"
+
+        project = $("#project_name").val();
+        company = $("#project_company").val();
+        contact = $("#project_call").val();
+        info = $("#project_info").val();
+        location = $("#project_Location").val();
+       
+        $.ajax({
+            type: 'GET',
+
+            url: url,
+            data: { project: project, company: company, contact: contact, info:info, location:location },
+            success: function (data) {
+                console.log(data)
+                $("#AddProjectStatus").html(data);
+                alert(data);
+               
+            },
+            error: function (err) {
+                alert(err.status);
+                console.log(err);
+            }
+        });
+    };
+</script>
 
 
 </body>
 </html>
+{

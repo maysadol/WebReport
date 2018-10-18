@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Add Project</title>
@@ -12,57 +12,116 @@
 	src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 	</script>
   <style>
- 
+  .alert-field {  color: red; }  
 
 
  
   </style>
 </head>
-<body >
+<body>
 
 
-<div id="section1" class="container-fluid">
- 
- <div class="box-Signup">
-  <h2 id="HeadBox">Create your Account</h2>
-  <br>
+    <div id="section1" class="container-fluid">
 
-  <form>
-    <div class="form-group">
-      <label for="project_name">Username :</label>
-      <input type="text" class="form-control" id="project_name">
-    </div>
-    <div class="form-group">
-      <label for="project_company">Password:</label>
-      <input type="Password" class="form-control" id="project_company">
-    </div>
-	 <div class="form-group">
-      <label for="project_call">First name:</label>
-      <input type="text" class="form-control" id="project_call">
-    </div>
-	 <div class="form-group">
-      <label for="project_info">Last name:</label>
-      <input type="text" class="form-control" id="project_info">
-    </div>
-	 <div class="form-group">
-      <label for="project_Location">Email:</label>
-      <input type="text" class="form-control" id="project_Location">
-    </div>
-	 <div class="form-group">
-      <label for="project_Location">Contact number:</label>
-      <input type="number" class="form-control" id="project_Location">
-    </div>
-  </form>
-  
-  <a href="#" id="SubmitSignup" type="button" class="btn btn-primary">Create Account</a>
-</div> 
+        <div class="box-Signup">
+            <h2 id="HeadBox">Create your Account</h2>
+            <br>
 
-</div>
-<div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
-  
-</div>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username :</label>
+                    <input type="text" class="form-control" id="username">
+                    <p class="alert-field" id="username_required"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="Password" class="form-control" id="password">
+                    <p class="alert-field" id="password_required"></p>
+                </div>
+             
+                <div class="form-group">
+                    <label for="confirm_password">Confirm password:</label>
+                    <input type="Password" class="form-control" id="confirm_password">
+                    <p class="alert-field" id="confirm_password_required"></p>
+                </div>
+                <div class="form-group">
+                    <label for="fname">First name:</label>
+                    <input type="text" class="form-control" id="fname">
+                    <p class="alert-field" id="fname_required"></p>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last name:</label>
+                    <input type="text" class="form-control" id="lname">
+                    <p class="alert-field" id="lname_required"></p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact number:</label>
+                    <input type="number" class="form-control" id="contact">
+                </div>
+            </form>
 
+            <a href="#" id="SubmitSignup" type="button" class="btn btn-primary" onclick="CreateAccount()">Create Account</a>
+        </div>
+
+    </div>
+    <div id="section2" class="container-fluid">
+        <h1>Section 2</h1>
+
+    </div>
+    <script>
+        function CreateAccount() {
+            var username, password, fname, lname, confirm_password, username_required, password_required, fname_required, lname_required, confirm_password_required;
+
+
+            username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+            confirm_password = document.getElementById("confirm_password").value;
+            fname = document.getElementById("fname").value;
+            lname = document.getElementById("lname").value;
+
+
+            if (username == "") {
+                username_required = "Please enter username.";
+            } else {
+                username_required = "";
+            }
+            if (password == "") {
+                password_required = "Please enter password.";
+            } else {
+                password_required = "";
+            }
+            if (confirm_password == "") {
+                confirm_password_required = "Please confirm your password.";
+            }
+                else if (confirm_password != password) {
+                confirm_password_required = "The confirm password doesn't match.";
+                }
+             else {
+                confirm_password_required = "";
+            }
+            if (fname == "") {
+                fname_required = "Please enter your first name.";
+            } else {
+                fname_required = "";
+            }
+            if (lname == "") {
+                lname_required = "Please enter your last name.";
+            } else {
+                lname_required = "";
+            }
+            document.getElementById("username_required").innerHTML = username_required;
+            document.getElementById("password_required").innerHTML = password_required;
+            document.getElementById("confirm_password_required").innerHTML = confirm_password_required;
+            document.getElementById("fname_required").innerHTML = fname_required;
+            document.getElementById("lname_required").innerHTML = lname_required;
+          
+        }
+    </script>
 
 </body>
 </html>
+    

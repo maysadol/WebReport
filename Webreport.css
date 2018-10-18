@@ -85,14 +85,14 @@ body {
 		display: inline-block;
 		box-shadow: 10px 10px 10px black;
 	}
-	  
+ 
   .bg-black{background-color:black;}
   .ViewTask-btn{width:200px; }
   #ViewTask-btn{ color:#151515;}
   #ViewTask-btn:link{color:#151515; font-weight:bold; text-align:center;}
   #ViewTask-btn:hover{color:#151515; font-weight:bold; text-align:center;}
-  #ViewTask-btn:active{color:#ffff; font-weight:bold; text-align:center;}
-  #ViewTask-btn:visited{color:#ffff; font-weight:bold; text-align:center;}
+  #ViewTask-btn:active{color:#fff; font-weight:bold; text-align:center;}
+  #ViewTask-btn:visited{color:#fff; font-weight:bold; text-align:center;}
   #usernameicon{color:#92D050; margin-right:5px; font-size: 12px;}
   #section1 {padding-top:50px; padding-bottom:200px; height:auto;color: #fff; background-color: #333333;}
   #section2 {padding-top:50px;height:auto;color: #fff; background-color: #92D050;}
@@ -321,7 +321,7 @@ body {
 	#selsort{width:200px;}
 	#selsearch{width:200px;}
 	#inputsearch{height:25px; width:200px; margin-top:5px; }
-	#searchbtn {font-size: 20px; top:5px; color:#92D050; margin-left:10px;}
+   
 	#topic {font-size:14px;
 	display: inline-block;
 	font-weight:bold;}
@@ -381,7 +381,6 @@ body {
 	#selsort{width:200px;}
 	#selsearch{width:200px;}
 	#inputsearch{height:25px; width:200px; margin-top:5px; }
-	#searchbtn {font-size: 20px; top:5px; color:#92D050; margin-left:10px;}
 	#topic {font-size:14px;
 	display: inline-block;
 	font-weight:bold;}

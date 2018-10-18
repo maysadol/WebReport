@@ -12,7 +12,7 @@
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen"
      href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-	<link rel="stylesheet" href="css/Mycss.css"/>
+    <!---<link rel="stylesheet" href="css/Mycss.css" />!-->
 	<link rel="stylesheet" href="Webreport.css">
   <style>
 		.column.side {
@@ -23,7 +23,34 @@
 		.column.middle {
 			width: 80%;
 		}
-	
+      .box-Report {
+          background-color: #fff;
+          color: #151515;
+          width: 95%;
+          height: auto;
+          padding: 25px;
+          margin-left: 2.5%;
+          display: inline-block;
+          box-shadow: 10px 10px 10px black;
+      }
+      .box-Report-subhead {
+          background-color: #92D052;
+          color: #000;
+          font-size: 16px;
+          font-weight: bold;
+          width: 100%;
+          height: auto;
+          padding: 10px;
+          margin-left: 0px;
+          margin-bottom:10px;
+          margin-top: 10px;
+          display: inline-block;
+          box-shadow: 5px 5px 10px #333333;
+      }
+     
+      .form-control {
+      height:30px;
+      }
   </style>
 </head>
 <body >
@@ -34,57 +61,93 @@
 	<div class="row">
 
 	  <div class="column middle">
-		<h2>Report</h2>
-			<table class="table" style="width:90%; margin-left:5%; margin-top:20px;">
-				<thead>
-				  <tr>
-					<th style="width:10%">time</th>
-					<th style="width:15%">user</th>
-					<th style="width:25%">location</th>
-					<th style="width:25%">project</th>
-					<th style="width:25%">task</th>
+          <div class="box-Report">
+              <h2 id="HeadBox" class="text-center">Report</h2>
+              <table class="table" style="width:90%; margin-left:5%; margin-top:20px;">
+                  <thead>
+                      <tr>
+                          <th style="width:10%">time</th>
+                          <th style="width:15%">user</th>
+                          <th style="width:25%">location</th>
+                          <th style="width:25%">project</th>
+                          <th style="width:25%">task</th>
 
-				  </tr>
-				</thead>
-				<tbody id="Report_Result">
-				  <tr>
-					<td class="time_report">2018-08-29 Time 15:41</td>
-					<td class="username_report">username</td>
-					<td class="location_report">Paris</td>
-					<td class="project_report">Projecttttt</td>
-					<td class="task_report">taskkkk</td>
-				  </tr>
+                      </tr>
+                  </thead>
+                  <tbody id="Report_Result">
+                      <tr>
+                          <td class="time_report"  id="Today"></td>
+                          <td class="username_report">username</td>
+                          <td class="location_report">location</td>
+                          <td class="project_report">project</td>
+                          <td class="task_report">task</td>
+                      </tr>
 
-				</tbody>
-  </table>
+                  </tbody>
+              </table>
+          </div>
 	  </div>
       <div class="column side">
 
 
           <!--dailyreport select date-->
           </br>
-          <div class="head"> Daily</div>
+          <div class="box-Report-subhead"> Daily</div>
           <br>
-          <div id="datetimepicker4" class="input-append">
-              <input data-format="dd-MM-yyyy" type="text" style="height:25px; width:170px; margin:5px;"></input>
-              <span class="add-on" style="height:25px; width:25px; margin-left:5px; margin-top:5px; margin-bottom:5px; ">
+          <div id="datetimepicker" class="input-append">
+              <input data-format="dd-MM-yyyy" type="text" style="height:30px; width:170px; margin-top:10px;"></input>
+              <span class="add-on" style="height:30px; width:30px; margin-left:0px; margin-top:10px; margin-bottom:5px; ">
                   <i data-time-icon="icon-time" data-date-icon="icon-calendar" style="margin-bottom:5px;">
                   </i>
+
               </span>
           </div>
 
           <div>
-              <label class="radio-inline"><input type="radio" name="optradio" checked>Weekly</label>
-
+              <label class="radio-inline"><input type="radio" name="optradio" checked>Daily</label>
+              <label class="radio-inline"><input type="radio" name="optradio">Weekly</label>
               <label class="radio-inline"><input type="radio" name="optradio">Monthly</label>
-              <label class="radio-inline"><input type="radio" name="optradio">Yearly</label>
           </div>
-          <!--sort! by -->
+          <button id="view_report_by_date_range" class="btn btn-primary" style="margin-top:10px;">
+              View report
+
+          </button>
+
+
+          <br />
+          <!--search!-->
           <br>
-          <div class="head">Sort by</div>
+
+          <div class="box-Report-subhead">Search</div>
+          <br>
+
+          <div class="form-group">
+
+              <select class="form-control" id="selsearch">
+                  <option>All</option>
+
+                  <option>Username</option>
+                  <option>Location</option>
+                  <option>Project</option>
+              </select>
+          </div>
+
+
+
+          <input type="text" name="SearchReport" id="inputsearch" style="margin-top:0px; height:30px"></input>
+          <!----<input id="search_report" type="button">-->
+          <!-- <a href="#" style="color:#566573;"> -->
+          <br />
+          <button id="search_report" class="btn btn-primary">
+              Search
+              <i class="glyphicon glyphicon-search"></i>
+          </button>
+          <!--sort! by -->
+          <br /><br />
+          <div class="box-Report-subhead">Sort by</div>
           <br>
           <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
+
               <select class="form-control" id="selsort">
                   <option>Date</option>
                   <option>Username</option>
@@ -92,92 +155,78 @@
                   <option>Project</option>
               </select>
           </div>
-          <button type="button" class="btn btn-primary" style="background-color:#0099cc;">View report </button>
+
           <br>
-
-
-          <!--search!-->
-          <br><br>
-
-          <div class="head">Search</div>
-          <br>
-
-          <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
-              <select class="form-control" id="selsearch">
-                  <option>All</option>
-                  <option>Date</option>
-                  <option>Username</option>
-                  <option>Location</option>
-                  <option>Project</option>
-              </select>
-          </div>
+          <br /><br /><br />
 
 
 
-          <input type="text" name="SearchReport" id="inputsearch"></input>
-          <input id="search_report" type="button">
-          <a href="#" style="color:#566573;">
-              <span id="searchbtn" class="glyphicon glyphicon-search "></span>
-
-
-
-
-
-
-
-
-              <script type="text/javascript"
-                      src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-              </script>
-              <script type="text/javascript"
-                      src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
-              </script>
-              <script type="text/javascript"
-                      src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-              </script>
-              <script type="text/javascript"
-                      src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-              </script>
-              <script type="text/javascript">
-                  $(function () {
-                      $('#datetimepicker4').datetimepicker({
-                          pickTime: false
-                      });
+          <script>
+              var d = new Date();
+              document.getElementById("Today").innerHTML = d;
+          </script>
+          <script type="text/javascript"
+                  src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+          </script>
+          <script type="text/javascript"
+                  src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+          </script>
+          <script type="text/javascript"
+                  src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+          </script>
+          <script type="text/javascript"
+                  src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+          </script>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker').datetimepicker({
+                      pickTime: false
                   });
+              });
+              /* search report */
+              $("#search_report").click(function () {
+                  var searchtype, searchtext, url
+                  
+                  url = "http://127.0.0.1:18088/api/botservice/search/sort"
 
-                  $("#search_report").click(function () {
-                      $.ajax({
-                          type: 'GET',
-                          url: 'http://127.0.0.1:18088/api/botservice/location/search',
-                          data: { location: 'e' },
-                          success: function (data) {
-                              dataJson = $.parseJSON(data);
-                              var result = "";
-                              var d;
+                  searchtext = $("#inputsearch").val();
+                  searchtype = document.getElementById("selsearch").value;
+                  sorttype = document.getElementById("selsort").value;
+                  $.ajax({
+                      type: 'GET',
 
-                              for (i = 0; i < dataJson.length; i++) {
-                                  d = new Date(0);
-                                  d.setUTCSeconds(dataJson[i].time.$date);
-                                  console.log(d);
-                                  result += "<tr>";
-                                  result += "<td class=\"time_report\">" + d.getDate() + " " + d.getMonth() + 1 + " " + d.getFullYear() + "</td>";
-                                  result += "<td class=\"username_report\">" + dataJson[i].user + "</td>";
-                                  result += "<td class=\"location_report\">" + dataJson[i].location + "</td>";
-                                  result += "<td class=\"project_report\">" + dataJson[i].project + "</td>";
-                                  result += "<td class=\"task_report\">" + dataJson[i].task + "</td>";
-                                  result += "</tr>";
-                              }
-                              alert("hello");
-                              $("#Report_Result").html(result);
-                          },
-                          error: function (err) {
-                              alert(err.status);
-                              console.log(err);
+                      url: url,
+                      data: { text_search: searchtext, type_search: searchtype, type_to_sort: sorttype },
+                      success: function (data) {
+                          dataJson = $.parseJSON(data);
+                          var result = "";
+                          var d;
+
+                          for (i = 0; i < dataJson.length; i++) {
+                              d = new Date(0);
+
+                              d.setUTCSeconds(dataJson[i].time.$date);
+                              console.log(d);
+                              result += "<tr>";
+                              result += "<td class=\"time_report\">" + d.getDate() + " " + d.getMonth() + 1 + " " + d.getFullYear() + "</td>";
+                              result += "<td class=\"username_report\">" + dataJson[i].user + "</td>";
+                              result += "<td class=\"location_report\">" + dataJson[i].location + "</td>";
+                              result += "<td class=\"project_report\">" + dataJson[i].project + "</td>";
+                              result += "<td class=\"task_report\">" + dataJson[i].task + "</td>";
+                              result += "</tr>";
                           }
-                      });
+
+                          alert("!search : " + searchtype + " sort by: " + sorttype);
+                          $("#Report_Result").html(result);
+                      },
+                      error: function (err) {
+                          alert(err.status);
+                          console.log(err);
+                      }
                   });
-              </script>
+              });
+          </script>
+
 
 
 
