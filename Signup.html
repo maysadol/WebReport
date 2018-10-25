@@ -24,7 +24,7 @@
     <div id="section1" class="container-fluid">
 
         <div class="box-Signup">
-            <h2 id="HeadBox">Create your Account</h2>
+            <h2 class="HeadBox">Create your Account</h2>
             <br>
 
             <form>
@@ -64,7 +64,7 @@
                 </div>
             </form>
 
-            <a href="#" id="SubmitSignup" type="button" class="btn btn-primary" onclick="CreateAccount()">Create Account</a>
+            <a href="#" id="SubmitSignup" type="button" class="btn btn-primary" onclick="Create_Account_check()">Create Account</a>
         </div>
 
     </div>
@@ -73,8 +73,9 @@
 
     </div>
     <script>
-        function CreateAccount() {
+        function Create_Account_check() {
             var username, password, fname, lname, confirm_password, username_required, password_required, fname_required, lname_required, confirm_password_required;
+            var create_account = true;
 
 
             username = document.getElementById("username").value;
@@ -86,30 +87,36 @@
 
             if (username == "") {
                 username_required = "Please enter username.";
+                create_account = false;
             } else {
                 username_required = "";
             }
             if (password == "") {
                 password_required = "Please enter password.";
+                create_account = false;
             } else {
                 password_required = "";
             }
             if (confirm_password == "") {
                 confirm_password_required = "Please confirm your password.";
+                create_account = false;
             }
                 else if (confirm_password != password) {
                 confirm_password_required = "The confirm password doesn't match.";
+                create_account = false;
                 }
              else {
                 confirm_password_required = "";
             }
             if (fname == "") {
                 fname_required = "Please enter your first name.";
+                create_account = false;
             } else {
                 fname_required = "";
             }
             if (lname == "") {
                 lname_required = "Please enter your last name.";
+                create_account = false;
             } else {
                 lname_required = "";
             }
@@ -118,8 +125,39 @@
             document.getElementById("confirm_password_required").innerHTML = confirm_password_required;
             document.getElementById("fname_required").innerHTML = fname_required;
             document.getElementById("lname_required").innerHTML = lname_required;
-          
+            if (create_account == true) { Create_Account();}
+            else { alert("Please fill out this form completely.") }
         }
+
+
+        function Create_Account() {
+            var username, password, firstname, lastname, email, contact
+
+            url = "http://127.0.0.1:18088/api/botservice/account/create"
+
+            username = $("#username").val();
+            password = $("#password").val();
+            firstname = $("#fname").val();
+            lastname = $("#lname").val();
+            email = $("#email").val();
+            contact = $("#contact").val();
+            $.ajax({
+                type: 'GET',
+
+                url: url,
+                data: { username: username, password: password, firstname: firstname, lastname: lastname, email: email,contact:contact },
+                success: function (data) {
+                    console.log(data)
+                    
+                    alert(data);
+                    window.location.href = "create_account_success.html"
+                },
+                error: function (err) {
+                    alert(err.status);
+                    console.log(err);
+                }
+            });
+        };
     </script>
 
 </body>

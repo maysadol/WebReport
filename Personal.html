@@ -1,86 +1,118 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Personal</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<link rel="stylesheet" href="Webreport.css">
-  <style>
-  .box-Personal {
-		background-color:#fff;
-		color:#151515;
-		width: 60%;
-		height:auto;
-		padding: 25px;
-		margin-left: 20%;
-		display: inline-block;
-		box-shadow: 10px 10px 10px black;
-		#inline{display: inline-block;}
-	}
-	
-  </style>
+    <title>Personnel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Webreport.css">
+    <style>
+        .box-Personal {
+            background-color: #fff;
+            color: #151515;
+            width: 60%;
+            height: auto;
+            padding: 25px;
+            margin-left: 20%;
+            display: inline-block;
+            box-shadow: 10px 10px 10px black;
+            #inline
+
+        {
+            display: inline-block;
+        }
+        }
+    </style>
 </head>
-<body >
+<body onload='PersonnelList()'>
 
 
-<div id="section1" class="container-fluid">
-<div class="box-Personal">
- 
- <h2 id="HeadBox" class="text-center">Personal</h2>
+    <div id="section1" class="container-fluid">
+        <div class="box-Personal">
+
+            <h2 class="text-center HeadBox">
+                Personnel
+            </h2>
 
 
 
-  
-  <table class="table table-hover" style="margin-top:50px; ">
-    <thead>
-      <tr style="color:#92D050;">
-	   <th style="width:20%;"><span id="usernameicon" class="glyphicon glyphicon-user"></span>Username</th>
-        <th style="width:25%;">Firstname</th>
-        <th style="width:25%;">Lastname</th>
-        <th style="width:15%;">Lastest status</th>
-		 <th  class="text-center" style="width:15%;">Daily report  </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr onclick="window.location='PersonalInfo.html';">
-         <td>John.D</td>
-		<td>John</td>
-        <td>Doe</td>
-        <td>Today</td>
-		<td class="text-center" ><span class="glyphicon glyphicon-ok"></span></td>
-      </tr>
-      <tr onclick="window.location='PersonalInfo.html';">
-         <td>Mary.M</td>
-		<td>Mary</td>
-        <td>Moe</td>
-        <td>Monday</td>
-		<td class="text-center" ><span class="glyphicon glyphicon-remove"></span></td>
-      </tr>
-      <tr onclick="window.location='PersonalInfo.html';">
-         <td>July.D</td>
-		<td>July</td>
-        <td>Dooley</td>
-        <td>Yesterday</td>
-		<td class="text-center"><span class="glyphicon glyphicon-remove"></span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+            <table class="table table-hover" style="margin-top:50px; id="table">
+                <thead>
+                    <tr style="color:#92D050;">
+                        <th style="width:20%;"><span id="usernameicon" class="glyphicon glyphicon-user"></span>Username</th>
+                        <th style="width:25%;">Firstname</th>
+                        <th style="width:25%;">Lastname</th>
+                        <th style="width:15%;">Lastest status</th>
+                        <th class="text-center" style="width:15%;">Daily report  </th>
+                    </tr>
+                </thead>
+                <tbody id="pesonal_list">
+                   
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
 
-</div>
+    </div>
 
-<br>
+    <br>
 
 
-<div id="section2" class="container-fluid">
-  <h1 >End</h1>
+    <div id="section2" class="container-fluid">
+        <h1>End</h1>
 
-</div>
+    </div>
 
+    <script>
+        function PersonnelList() {
+            var url = "http://127.0.0.1:18088/api/botservice/personal"
+
+            url = url
+            $.ajax({
+                type: 'GET',
+
+                url: url,
+                data: {},
+                dataType: "json",
+                success: function (dataJson) {
+                    console.log("data  ",dataJson)
+                    result = "";
+                    for (i = 0; i < dataJson.length; i++) {
+
+                        result += "<tr  onclick=\"theFunction(event)\" class=\"personal_member\" >";
+                        result += "<td class=\"personal_username\" id=\"user_" + dataJson[i].username + "\">" + dataJson[i].username + "</td>";
+                        result += "<td id=\"user_" + dataJson[i].username + "\">" + dataJson[i].firstname + "</td>";
+                        result += "<td id=\"user_" + dataJson[i].username + "\">" + dataJson[i].lastname + "</td>";
+                        result += "<td id=\"user_" + dataJson[i].username + "\">" + "Today" + "</td>";
+                        result += "<td class=\"text-center\" id=\"user_" + dataJson[i].username + "\"><span class=\"glyphicon glyphicon-ok\"></span></td>"
+                        result += "</tr>";
+                    }
+
+
+                    $("#pesonal_list").html(result);
+
+                },
+                error: function (err) {
+                    alert(err.status);
+                    console.log(err);
+                }
+            });
+        };
+
+
+        function theFunction(e) {
+            var id = e.target.id;
+            var username_send = id.replace("user_", "");
+
+            localStorage.setItem('username', username_send)
+            window.location.href = "personalInfo.html";
+        }
+
+    </script>
 
 
 </body>

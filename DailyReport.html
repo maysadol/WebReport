@@ -55,7 +55,7 @@
         }
     </style>
 </head>
-<body>
+<body >
 
 
     <div id="section1" class="container-fluid">
@@ -64,7 +64,7 @@
 
             <div class="column middle">
                 <div class="box-Report">
-                    <h2 id="HeadBox" class="text-center">Report</h2>
+                    <h2 class="text-center HeadBox">Report</h2>
                     <table class="table" style="width:90%; margin-left:5%; margin-top:20px;">
                         <thead>
                             <tr>
@@ -78,11 +78,11 @@
                         </thead>
                         <tbody id="Report_Result">
                             <tr>
-                                <td class="time_report" id="Today"></td>
-                                <td class="username_report">username</td>
-                                <td class="location_report">location</td>
-                                <td class="project_report">project</td>
-                                <td class="task_report">task</td>
+                                <td class="time_report" ></td>
+                                <td class="username_report"></td>
+                                <td class="location_report"></td>
+                                <td class="project_report"></td>
+                                <td class="task_report"></td>
                             </tr>
 
                         </tbody>
@@ -94,10 +94,10 @@
 
                 <!--dailyreport select date-->
                 </br>
-                <div class="box-Report-subhead"> Daily</div>
+                <div class="box-Report-subhead">Daily</div>
                 <br>
                 <div id="datetimepicker" class="input-append">
-                    <input data-format="dd-MM-yyyy" type="text" style="height:30px; width:170px; margin-top:10px;"></input>
+                    <input id="datepicker" data-format="dd-MM-yyyy" type="text" style="height:30px; width:170px; margin-top:10px;"></input>
                     <span class="add-on" style="height:30px; width:30px; margin-left:0px; margin-top:10px; margin-bottom:5px; ">
                         <i data-time-icon="icon-time" data-date-icon="icon-calendar" style="margin-bottom:5px;">
                         </i>
@@ -199,18 +199,20 @@
 
                             url: url,
                             data: { text_search: searchtext, type_search: searchtype, type_to_sort: sorttype },
-                            success: function (data) {
-                                dataJson = $.parseJSON(data);
+                            dataType: "json",
+                            success: function (dataJson) {
+                                console.log("data  ",dataJson)
                                 var result = "";
                                 var d;
-
+                     
+                                
                                 for (i = 0; i < dataJson.length; i++) {
-                                    d = new Date(0);
+                                    d = new Date(dataJson[i].time);
 
-                                    d.setUTCSeconds(dataJson[i].time.$date);
+                                 
                                     console.log(d);
                                     result += "<tr>";
-                                    result += "<td class=\"time_report\">" + d.getDate() + " " + d.getMonth() + 1 + " " + d.getFullYear() + "</td>";
+                                    result += "<td class=\"time_report\">" +  dataJson[i].time+ "</td>";
                                     result += "<td class=\"username_report\">" + dataJson[i].user + "</td>";
                                     result += "<td class=\"location_report\">" + dataJson[i].location + "</td>";
                                     result += "<td class=\"project_report\">" + dataJson[i].project + "</td>";
@@ -218,7 +220,51 @@
                                     result += "</tr>";
                                 }
 
-                                alert("!search : " + searchtype + " sort by: " + sorttype);
+                             //d.toLocaleString()
+                                $("#Report_Result").html(result);
+                            },
+                            error: function (err) {
+                                alert(err.status);
+                                console.log(err);
+                            }
+                        });
+                    });
+                    //Search Date
+                    $("#view_report_by_date_range").click(function () {
+                        var searchtype, date_query, url
+
+                        url = "http://127.0.0.1:18088/api/botservice/search/date"
+
+                        searchtext = $("#inputsearch").val();
+                        searchtype = document.getElementById("selsearch").value;
+                        sorttype = document.getElementById("selsort").value;
+                        $.ajax({
+                            type: 'GET',
+
+                            url: url,
+                            data: { text_search: searchtext, type_search: searchtype, type_to_sort: sorttype },
+                            dataType: "json",
+                            success: function (dataJson) {
+                                console.log("data  ",dataJson)
+                                var result = "";
+                                var d;
+                     
+                                
+                                for (i = 0; i < dataJson.length; i++) {
+                                    d = new Date(dataJson[i].time);
+
+                                 
+                                    console.log(d);
+                                    result += "<tr>";
+                                    result += "<td class=\"time_report\">" +  dataJson[i].time+ "</td>";
+                                    result += "<td class=\"username_report\">" + dataJson[i].user + "</td>";
+                                    result += "<td class=\"location_report\">" + dataJson[i].location + "</td>";
+                                    result += "<td class=\"project_report\">" + dataJson[i].project + "</td>";
+                                    result += "<td class=\"task_report\">" + dataJson[i].task + "</td>";
+                                    result += "</tr>";
+                                }
+
+                             //d.toLocaleString()
                                 $("#Report_Result").html(result);
                             },
                             error: function (err) {

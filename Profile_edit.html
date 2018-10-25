@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Add Project</title>
@@ -12,37 +12,42 @@
 	src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 	</script>
   <style>
-  #SubmitSignup{
-				width:20%;
-				height:40px;
-				padding-top:8px;
-				margin-left:40%; 
-				margin-right:40%; 
-				font-size:16px;
-				font-weight: bold;
-				border-color:#0099ff;
-				background-color:#0099ff;
-				box-shadow: 5px 3px 30px grey;}
-#SubmitSignup:hover{
-				width:20%;
-				height:40px;
-				padding-top:8px;
-				margin-left:40%; 
-				margin-right:40%; 
-				font-size:16px;
-				font-weight: bold;
-				border-color:#92D050;
-				background-color:#92D050;
-				box-shadow: 5px 3px 30px grey;}
-	.box-addproject {
-		background-color:#fff;
-		color:#151515;
-		width: 60%;
-		height:auto;
-		padding: 25px;
-		margin-left: 20%;
-		display: inline-block;
-	}
+      #edit_profile {
+          width: 200px;
+          height: 40px;
+          padding-top: 8px;
+          margin-right: auto;
+          margin-left: auto;
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          border-color: #0099ff;
+          background-color: #0099ff;
+          box-shadow: 5px 3px 30px grey;
+      }
+          #edit_profile:hover {
+              width: 200px;
+              height: 40px;
+              padding-top: 8px;
+              margin-right: auto;
+              margin-left: auto;
+              display: block;
+              font-size: 16px;
+              font-weight: bold;
+              border-color: #92D050;
+              background-color: #92D050;
+              box-shadow: 5px 3px 30px grey;
+          }
+      .box-userprofile {
+          background-color: #fff;
+          color: #151515;
+          width: 700px;
+          height: auto;
+          padding: 25px;
+          margin-right: auto;
+          margin-left: auto;
+          display: block;
+      }
 #HeadBox { 
 			color:#92D050;
 			text-shadow: 2px 2px 5px black;
@@ -57,7 +62,7 @@
 
 <div id="section1" class="container-fluid">
  
- <div class="box-addproject">
+ <div class="box-userprofile">
   <h2 id="HeadBox">Profile</h2>
   <br>
 
@@ -88,7 +93,7 @@
     </div>
   </form>
   
-  <a href="#" id="SubmitSignup" type="button" class="btn btn-primary">Create Account</a>
+  <a href="#" id="edit_profile" type="button" class="btn btn-primary">Create Account</a>
 </div> 
 
 </div>

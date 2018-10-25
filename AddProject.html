@@ -14,8 +14,18 @@
   <style>
       .alert-field {
           color: red;
-      }   
-
+      }
+      .add-location-icon {
+          text-size: 14px;
+          color: #0099ff;
+          margin-left: 5px;
+      }
+      .add-location-icon:hover {
+          text-size: 14px;
+          color: #92D050;
+          margin-left: 5px;
+      }
+ 
  
   </style>
 </head>
@@ -24,7 +34,7 @@
     <div id="section1" class="container-fluid">
 
         <div class="box-addproject">
-            <h2 id="HeadBox">Add Project</h2>
+            <h2 class="HeadBox">Add Project</h2>
             <br>
 
       
@@ -48,9 +58,12 @@
                     <input type="text" class="form-control" id="project_info">
                 </div>
                 <div class="form-group">
-                    <label for="project_Location">Project location:</label>
+                    <label for="project_Location">Project location <span onclick="add_location_click()" id="add_location_project"class="glyphicon glyphicon-plus-sign add-location-icon"></span></label>
                     <input type="text" class="form-control" id="project_Location">
                     <p class="alert-field" id="Location_required"></p>
+                    <div id="add_location_field"></div>
+
+
                 </div>
                  
             <a href="#" id="SubmitProject" type="button" class="btn btn-primary" onclick="AddProjectCheck()">Submit</a>
@@ -100,7 +113,7 @@
     </script>
 
 <script>
-    /* search report */
+   
    function AddProject() {
         var project, company, contact, info, location, url
         
@@ -129,6 +142,20 @@
             }
         });
     };
+
+
+    var clicks = 0;
+    function add_location_click() {
+        clicks += 1;
+        document.getElementById("add_location_project").innerHTML = clicks;
+        add_location_field(clicks);
+    };
+    function add_location_field(number_of_location) {
+        result = "<input style=\"margin-bottom:10px;\"type=\"text\" class=\"form-control\" id=\"project_Location_"+number_of_location+"\"></input>"
+
+        $("#add_location_field").append(result)
+        alert(number_of_location);
+    }
 </script>
 
 

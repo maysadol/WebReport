@@ -1,82 +1,113 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Add Project</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    	<link rel="stylesheet" href="Webreport.css">
-	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-	</script>
-  <style>
+    <title>Add Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Webreport.css">
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+    <style>
 
-      .alert-field {
-          color: red;
-      }  
-
- 
-  </style>
+        .alert-field {
+            color: red;
+        }
+    </style>
 </head>
-<body >
+<body>
 
-<div id="section1" class="container-fluid">
- 
- <div class="box-login">
-  <h2 id="HeadBox">Login</h2>
-  <br>
+    <div id="section1" class="container-fluid">
 
-
-      <div class="form-group">
-          <label for="username">Username :</label>
-          <input type="text" class="form-control" id="username">
-          <p class="alert-field" id="username_required"></p>
-      </div>
-      <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="Password" class="form-control" id="password">
-          <p class="alert-field" id="password_required"></p>
-      </div>
-	 
-
-  <br>
-  <a href="#" id="loginbtn" type="button" class="btn btn-primary" onclick="UserLogin()">Login</a>
-</div> 
-
-</div>
-<div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
-  
-</div>
-
-<script>
-    function UserLogin() {
-        var username, password, username_required, password_required;
-        
-
-        username = document.getElementById("username").value;
-        password = document.getElementById("password").value;
+        <div class="box-login">
+            <h2 class="HeadBox">Login</h2>
+            <br>
 
 
-        if (username == "") {
-            username_required = "Please enter your username.";
-        } else {
-            username_required = "";
+            <div class="form-group">
+                <label for="username">Username :</label>
+                <input type="text" class="form-control" id="username">
+                <p class="alert-field" id="username_required"></p>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="Password" class="form-control" id="password">
+                <p class="alert-field" id="password_required"></p>
+            </div>
+
+
+            <br>
+            <p class="alert-field" id="login_error"></p>
+            <a href="#" id="loginbtn" type="button" class="btn btn-primary" onclick="UserLogin()">Login</a>
+        </div>
+
+    </div>
+    <div id="section2" class="container-fluid">
+        <h1>Section 2</h1>
+
+    </div>
+
+    <script>
+        function UserLogin() {
+            var username, password, username_required, password_required, login;
+
+
+            username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+            login = true;
+
+            if (username == "") {
+                username_required = "Please enter your username.";
+                login = false;
+            } else {
+                username_required = "";
+            }
+            if (password == "") {
+                password_required = "Please enter your password.";
+                login = false;
+
+            } else {
+                password_required = "";
+            }
+
+            document.getElementById("username_required").innerHTML = username_required;
+            document.getElementById("password_required").innerHTML = password_required;
+            if (login == true) { Login(); }
+
         }
-        if (password == "") {
-            password_required = "Please enter your password.";
-        } else {
-            password_required = "";
-        }
+        function Login() {
+            var username, password
 
-        document.getElementById("username_required").innerHTML = username_required;
-        document.getElementById("password_required").innerHTML = password_required;
-     
-    }
+            url = "http://127.0.0.1:18088/api/botservice/login"
 
-</script>
+            username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+
+            $.ajax({
+                type: 'GET',
+
+                url: url,
+                data: { username: username, password: password },
+                success: function (data) {
+                    if (data == "Login successfull") {
+                        window.location.href = "login_success.html"
+                    }
+                    else { document.getElementById("login_error").innerHTML = data; }
+
+                    console.log(data)
+
+
+                },
+                error: function (err) {
+                    alert(err.status);
+                    console.log(err);
+                }
+            });
+        };
+    </script>
 
 </body>
 </html>

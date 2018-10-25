@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Personal</title>
@@ -13,7 +13,7 @@
 	
   </style>
 </head>
-<body >
+<body onload="item()">
  
 
 <div id="section1" class="container-fluid">
@@ -22,26 +22,26 @@
 <!--Member info!-->
 <div class="column  side">
 <div class="box-profile box-shadow text-personal">
-<h2 id="HeadBox" class="text-center" >Personal </h2>
+<h2  class="text-center HeadBox" >Profile </h2>
  
- <img  id="userpic"  src="userpic.png"  "></img>
+ <img  id="userpic"  src="userpic.png"  ></img>
 
    
 <p class="head"><span class="glyphicon glyphicon-user"></span>Name</p> 
-<p >John Doe(John)</p> 
+<p id="fname_info" ></p>
 <p class="head"><span class="glyphicon glyphicon-briefcase"></span>Job position</p>
 <p >Developer</p>
 <p class="head"><span class="glyphicon glyphicon-envelope"></span>Email</p> 
-<p >John.D@hotmail.com</p> 
+<p id="email_info"></p> 
 <p class="head"><span class="glyphicon glyphicon-earphone"></span>Contact Number </p>
-<p >091-1501112</p>  
+<p id="contact_info"></p>  
 <br>
 </div>
 </div>
 <!--Project !-->
 	<div class="column middle">
-		<div class="box-member-project ">
-		<h2  id="HeadBox" class="text-center" >Project </h2>
+		<div class="box-personal-project ">
+		<h2  class="text-center HeadBox" >Project </h2>
 		  
 		  <table class="table text-black" >
 			<thead class="head">
@@ -87,7 +87,7 @@
 					<div class="panel-group  ">
 					  <div class="panel panel-default " >
 					  <div class="panel-heading text-center ">
-						<a  id="ViewTask-btn"  data-toggle="collapse" href="#collapse2">View Task</a>
+						<a  id="ViewTask-btn" class-="ViewTask-btn"  data-toggle="collapse" href="#collapse2">View Task</a>
 						</div>
 						  <div id="collapse2" class="panel-collapse collapse bg-black" >
 						  <ul class="list-group">
@@ -103,7 +103,7 @@
 			
 			  </tr>
 			  <tr>
-				<td>Project C</td>
+				<td>Project C2</td>
 			  
 				 <!--(in table) task!-->  <td>   
 					<div class="panel-group  ">
@@ -126,7 +126,7 @@
 			  
 			</tbody>
 		  </table>
-			<button id="btnHistory" type="button" class="btn">History report</button>
+			<button id="btnHistory" type="button" class="btn btnHistory">History report</button>
 		 
 		</div>
 	</div>
@@ -141,7 +141,44 @@
   <h1>End</h1>
 
 </div>
+<script>     
 
+
+
+
+    function item() {
+        var item = localStorage.getItem('username');             
+        var username = item;
+
+        var url = "http://127.0.0.1:18088/api/botservice/personal/info";
+
+
+        $.ajax({
+            type: 'GET',
+
+            url: url,
+            data: { username: username },
+            success: function (data) {
+                dataJson = $.parseJSON(data);
+                document.getElementById("fname_info").innerHTML = dataJson[0].firstname + " " + dataJson[0].lastname;
+                document.getElementById("email_info").innerHTML = dataJson[0].email;
+                document.getElementById("contact_info").innerHTML = dataJson[0].contact;
+
+              
+                
+
+
+            },
+            error: function (err) {
+                alert(err.status);
+                console.log(err);
+            }
+        });
+
+
+
+    }
+ </script>
 
 </body>
 </html>

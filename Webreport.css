@@ -64,7 +64,18 @@ body {
 		position: sticky;
 		box-shadow: 10px 10px 10px black;
 	}
-	.box-member-project {
+    .box-project-member {
+        background-color: #fff;
+        width: 800px;
+        height: auto;
+        padding: 25px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        color: black;
+        box-shadow: 10px 10px 10px black;
+}
+	.box-personal-project {
 		background-color:#fff;
 		width:90%;
 		height:auto;
@@ -87,12 +98,12 @@ body {
 	}
  
   .bg-black{background-color:black;}
-  .ViewTask-btn{width:200px; }
-  #ViewTask-btn{ color:#151515;}
-  #ViewTask-btn:link{color:#151515; font-weight:bold; text-align:center;}
-  #ViewTask-btn:hover{color:#151515; font-weight:bold; text-align:center;}
-  #ViewTask-btn:active{color:#fff; font-weight:bold; text-align:center;}
-  #ViewTask-btn:visited{color:#fff; font-weight:bold; text-align:center;}
+  .ViewTask-btn{width:200px; color:#151515; }
+  .ViewTask-btn{ }
+  .ViewTask-btn:link{color:#151515; font-weight:bold; text-align:center;}
+  .ViewTask-btn:hover{color:#151515; font-weight:bold; text-align:center;}
+  .ViewTask-btn:active{color:#fff; font-weight:bold; text-align:center;}
+  .ViewTask-btn:visited{color:#fff; font-weight:bold; text-align:center;}
   #usernameicon{color:#92D050; margin-right:5px; font-size: 12px;}
   #section1 {padding-top:50px; padding-bottom:200px; height:auto;color: #fff; background-color: #333333;}
   #section2 {padding-top:50px;height:auto;color: #fff; background-color: #92D050;}
@@ -158,14 +169,14 @@ body {
 	
 	.panel{color:#151515;}
 	.glyphicon-earphone,.glyphicon-envelope,.glyphicon-briefcase{color:#92D050; margin-right:5px; font-size: 12px;}
-	#btnHistory{
+	.btnHistory{
 		color:#fff; 
 		background-color:#92D050;
 		width:25%;
 		margin-left:40%
 		
 	}
-	#btnHistory:hover {color:#92D050; 
+	.btnHistory:hover {color:#92D050; 
 		background-color:#f2f2f2;
 		
 		margin-left:40%
@@ -207,86 +218,108 @@ body {
 		margin-left: 20%;
 		display: inline-block;
 	}
-	#HeadBox { 
+	.HeadBox { 
 			color:#92D050;
 			text-shadow: 2px 2px 5px black;
 		}
 
 	/*Sigup*/
-	 #SubmitSignup{
-				width:20%;
-				height:40px;
-				padding-top:8px;
-				margin-left:40%; 
-				margin-right:40%; 
-				font-size:16px;
-				font-weight: bold;
-				border-color:#0099ff;
-				background-color:#0099ff;
-				box-shadow: 5px 3px 30px grey;}
-	#SubmitSignup:hover{
-				width:20%;
-				height:40px;
-				padding-top:8px;
-				margin-left:40%; 
-				margin-right:40%; 
-				font-size:16px;
-				font-weight: bold;
-				border-color:#92D050;
-				background-color:#92D050;
-				box-shadow: 5px 3px 30px grey;}
-	.box-Signup {
-		background-color:#fff;
-		color:#151515;
-		width: 60%;
-		height:auto;
-		padding: 25px;
-		margin-left: 20%;
-		display: inline-block;
-		box-shadow: 10px 10px 10px black;
-	}
-	#HeadBox { 
+#SubmitSignup {
+    width: 200px;
+    height: 40px;
+    padding-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    border-color: #0099ff;
+    background-color: #0099ff;
+    box-shadow: 5px 3px 30px grey;
+}
+    #SubmitSignup:hover {
+        width: 200px;
+        height: 40px;
+        padding-top: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        border-color: #92D050;
+        background-color: #92D050;
+        box-shadow: 5px 3px 30px grey;
+    }
+.box-Signup {
+    background-color: #fff;
+    color: #151515;
+    width: 700px;
+    height: auto;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: 10px 10px 10px black;
+}
+	.HeadBox { 
 			color:#92D050;
 			text-shadow: 2px 2px 3px black;
 			letter-spacing: 2px;
 		}
 	/*Login*/
-	 #loginbtn{
-				width:20%;
-				height:40px;
-				padding-top:8px;
-				margin-left:40%; 
-				margin-right:40%; 
-				font-size:16px;
-				font-weight: bold;
-				border-color:#0099ff;
-				background-color:#0099ff;
-				box-shadow: 5px 5px 5px black;}
-	#loginbtn:hover{
-				width:20%;
-				height:40px;
-				padding-top:8px;
-				margin-left:40%; 
-				margin-right:40%; 
-				font-size:16px;
-				font-weight: bold;
-				border-color:#92D050;
-				background-color:#92D050;
-				box-shadow: 10px 10px 10px black;}
-	.box-login {
-		background-color:#fff;
-		color:#151515;
-		width: 60%;
-		height:auto;
-		padding: 25px;
-		margin-left: 20%;
-		display: inline-block;
-		box-shadow: 10px 10px 10px black;
-	}
+#loginbtn {
+    width: 200px;
+    height: 40px;
+    padding-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    border-color: #0099ff;
+    background-color: #0099ff;
+    box-shadow: 5px 5px 5px black;
+}
+    #loginbtn:hover {
+        width: 200px;
+        height: 40px;
+        padding-top: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        border-color: #92D050;
+        background-color: #92D050;
+        box-shadow: 10px 10px 10px black;
+    }
+.box-login {
+    background-color: #fff;
+    color: #151515;
+    width: 700px;
+    height: auto;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: 10px 10px 10px black;
+}
 	/*Dayily Report*/
 	Searchbar {padding-left:20px;}
-	
-	
+
+.box-successful {
+    background-color: #fff;
+    font-size: 16px;
+    color: #151515;
+    width: 600px;
+    height: auto;
+    padding: 25px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: 10px 10px 10px black;
+}
 	
   .tab {
    
@@ -329,26 +362,64 @@ body {
 	.float-right{float:right;}
 	/*Project*/
 	Searchbar {padding-left:20px;}
-	#AddProject {background-color:#33ccff;
-				border-color:#33ccff;
-				color:#fff;
-			    float:right;}
-	.box-Project {
-		background-color:#fff;
-		color:#151515;
-		width: 60%;
-		height:auto;
-		padding: 25px;
-		margin-left: 20%;
-		display: inline-block;
-		box-shadow: 10px 10px 10px black;
-	}			 
+#AddProject {
+    background-color: #33ccff;
+    border-color: #33ccff;
+    width: 100px;
+    margin-left: 10px;
+    
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+}
+    #AddProject:hover {
+        background-color: #92D050;
+        border-color: #92D050;
+        width: 100px;
+        margin-left: 10px;
+        display: inline-block;
+        color: #fff;
+        font-size: 12px;
+    }
+#AddLocation {
+    background-color: #33ccff;
+    border-color: #33ccff;
+    width: 100px;
+    margin-left: 170px;
+    margin-right: auto;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+}
+
+    #AddLocation:hover {
+        background-color: #92D050;
+        border-color: #92D050;
+        width: 100px;
+        margin-left: 170px;
+        margin-right: auto;
+        display: inline-block;
+        color: #fff;
+        font-size: 12px;
+    }
+.box-Project {
+    background-color: #fff;
+    color: #151515;
+    width: 600px;
+    height: auto;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    box-shadow: 10px 10px 10px black;
+}			 
 	#ListProject{pading-top:30px; padding-left:5%; padding-right:5%; color:#fff; background-color:#fff;}
 	#ListProject a{ color:#151515; background-color:#f2f2f2; border-color:#f2f2f2;}
 	#ListProject a:Hover{ color:#151515; background-color:#d9d9d9; border-color:#d9d9d9;}
-	
-	
-  .tab {
+	#AddProjecticon{font-size:12px; margin-right:5px;}
+
+
+    .tab {
     float: right;
 	 padding-left: 10px;
 	 padding-top: 0px;

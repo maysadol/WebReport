@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Project information</title>
@@ -8,68 +8,103 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link rel="stylesheet" href="Webreport.css">
+
   <style>
   
   </style>
 </head>
-<body >
+<body onload='ProjectInfo()'>
 
 
 <div id="section1" class="container-fluid">
   <!--Project info!!-->
 
 
-<div class="container">
-<h4 class="text-center h-project" style="color:white;">Project</h4>
+    <div class="container">
+        <h4 class="text-center h-project" style="color:white;">Project</h4>
 
-  <h2 class="text-center h-project" style="color:#92D050;">DD</h2>            
-<p class="head">Company</p> 
-<p class="info">Dimension Data</p> 
-<p class="head">Contact Number</p> 
-<p class="info">02555555</p> 
-<p class="head">location </p>
-<iframe class="location" style ="width:60%; margin-left:20%; margin-right:20%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7587483088973!2d100.5581165155708!3d13.733050801425849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f1d819578f7%3A0x10b0a6ef89b8d7a2!2sDimension+Data+Thailand!5e0!3m2!1sen!2sth!4v1537851039031" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <h2 class="text-center h-project" id="project_name" style="color:#92D050;">DD</h2>
+        <p class="head">Company</p>
+        <p class="info" id="project_company"></p>
+        <p class="head">Contact Number</p>
+        <p class="info" id="project_contact"></p>
+        <p class="head">location </p>
+        <p class="info" id="project_location"></p>
+        <!--<iframe class="location" style="width:60%; margin-left:20%; margin-right:20%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7587483088973!2d100.5581165155708!3d13.733050801425849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f1d819578f7%3A0x10b0a6ef89b8d7a2!2sDimension+Data+Thailand!5e0!3m2!1sen!2sth!4v1537851039031" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    -->
+        <p class="head">Information </p>
+        <p class="info" id="project_info"></p>
 
-<!--Member of project!-->
-<p class="head">Member</p>
- <table class="table table-hover" style="width:50%; margin-left:25%; " >
-    <thead>
-      <tr style="color:#92D050;">
-	   <th style="width:30%;"><span id="usernameicon" class="glyphicon glyphicon-user"></span>Username</th>
-        <th style="width:35%;">Firstname</th>
-        <th style="width:35%;">Lastname</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr onclick="window.location='file:///D:/WebReport/PersonalInfo.html#';">
-         <td>John.D</td>
-		<td>John</td>
-        <td>Doe</td>
-        
-      </tr>
-      <tr onclick="window.location='file:///D:/WebReport/PersonalInfo.html#';">
-         <td>Mary.M</td>
-		<td>Mary</td>
-        <td>Moe</td>
-       
-      </tr>
-      <tr onclick="window.location='file:///D:/WebReport/PersonalInfo.html#';">
-         <td>July.D</td>
-		<td>July</td>
-        <td>Dooley</td>
-        
-      </tr>
-    </tbody>
-  </table>
-  
-</div>
+        <br />
+        <!--Member of project!-->
+        <div class=" box-project-member">
+            <h3 class="text-center HeadBox">Member</h3><br />
+            <table class="table table-hover" style="width:80%; margin-left:10%; ">
+                <thead>
+                    <tr style="color:#92D050;">
+                        <th style="width:30%;"><span id="usernameicon" class="glyphicon glyphicon-user"></span>Username</th>
+                        <th style="width:35%;">Firstname</th>
+                        <th style="width:35%;">Lastname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="window.location='PersonalInfo.html#';">
+                        <td>John.D</td>
+                        <td>John</td>
+                        <td>Doe</td>
+
+                    </tr>
+                    <tr onclick="window.location='PersonalInfo.html#';">
+                        <td>Mary.M</td>
+                        <td>Mary</td>
+                        <td>Moe</td>
+
+                    </tr>
+                    <tr onclick="window.location='\PersonalInfo.html#';">
+                        <td>July.D</td>
+                        <td>July</td>
+                        <td>Dooley</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </div>
 <div id="section2" class="container-fluid">
   <h1>End</h1>
 
 </div>
+    <script>
+            function ProjectInfo () {
+                var project_name = localStorage.getItem('project');             
+                
+             
+               
+            $.ajax({
+                type: 'GET',
 
+                url: 'http://127.0.0.1:18088/api/botservice/project/info',
+                data: { project: project_name },
+                success: function (data) {
+                    
+                   dataJson = $.parseJSON(data); 
+                    document.getElementById("project_name").innerHTML = dataJson[0].project;
+                    document.getElementById("project_contact").innerHTML = dataJson[0].contact;
+                    document.getElementById("project_info").innerHTML = dataJson[0].info;
+                    document.getElementById("project_company").innerHTML = dataJson[0].company;
+                    document.getElementById("project_location").innerHTML = dataJson[0].location;
+                   
+                    
+                },
+                error: function (err) {
+                    alert(err.status);
+                    console.log(err);
+                }
+            });   
+        };
+    </script>
 
 </body>
 </html>

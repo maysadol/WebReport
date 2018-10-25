@@ -1,42 +1,119 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Project</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <link rel="stylesheet" href="Webreport.css">
-  <style>
-	
-  </style>
+    <title>Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Webreport.css">
+    <style>
+        .project-list {
+            background-color: #808080;
+            border-width: 1px;
+            margin-top: 5px;
+            color: #151515;
+            border-color: #808080;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+            .project-list:hover {
+                background-color: #92D050;
+                border-width: 1px;
+                margin-top: 5px;
+                color: #fff;
+                border-color: #92D050;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+    </style>
 </head>
-<body >
+<body onload='Projects()' >
 
 
 
-<div id="section1" class="container-fluid">
-  <!--Project List !-->
-<div class="box-Project">
-	</span><a href="AddProject.html" id="AddProject"  class="btn btn-info" role="button">Add Location<span id="AddProjecticon" class="glyphicon glyphicon-plus"></a> 
-	</span><a href="AddProject.html" id="AddProject"  class="btn btn-info" role="button">Add Project<span id="AddProjecticon" class="glyphicon glyphicon-plus"></a> 
-	<br>
-<div id="ListProject" class="list-group list-group-mine text-center" >
-	<h2 id="HeadBox" >Project</h2> 
-	<br>
-  <a href="ProjectInfo.html" class="list-group-item" href="/path"><strong>Project 1</strong></a>
-  <a href="ProjectInfo.html" class="list-group-item" href="/path"><strong>Project 2</strong></a>
-  <a href="ProjectInfo.html" class="list-group-item" href="/path"><strong>Project 3</strong></a>
-</div>
-<br>
-</div>
-</div>
+    <div id="section1" class="container-fluid">
+        <!--Project List !-->
+        <div class="box-Project">
 
-<div id="section2" class="container-fluid">
-  <h1>End</h1>
+            <h2  class="text-center HeadBox">Project</h2><br />
+            <div id="ListProject" class="list-group list-group-mine text-center" style="color:#151515;" >
 
-</div>
+                <br>
+                <a href="ProjectInfo.html" class="list-group-item"><strong>Project 1</strong></a>
+                <a href="ProjectInfo.html" class="list-group-item"><strong>Project 2</strong></a>
+                <a href="ProjectInfo.html" class="list-group-item"><strong>Project 3</strong></a>
+            </div>
+            <br>
+
+            <a href="AddProject.html" id="AddLocation" class="btn btn-info" role="button"><span id="AddProjecticon" class="glyphicon glyphicon-plus"></span>Location</a>
+            <a href="AddProject.html" id="AddProject" class="btn btn-info" role="button"><span id="AddProjecticon" class="glyphicon glyphicon-plus"></span>Project</a>
+            <br /><br />
+        </div>
+    </div>
+
+    <div id="section2" class="container-fluid">
+        <h1>End</h1>
+
+    </div>
+
+    <script>
+
+        function Projects() {
+
+            var url, getid;
+            
+            url = "http://127.0.0.1:18088/api/botservice/project"
+
+
+            $.ajax({
+                type: 'GET',
+
+                url: url,
+
+                data: {},
+                success: function (data) {
+                    var x = "";
+                    var length = 0;
+                    for (var key in data) {
+                        if (data.hasOwnProperty(key)) {
+                            length++;
+                        }
+                    }
+                    for (i = 0; i < length; i++) {
+                        x += "<li onclick=\"SendProjectName(event)\" class=\"list-group-item project-list\" id=\"project_" + data[i] + "\">";
+                        x += data[i];
+                        x += "</li>";
+                    }
+
+
+
+                    $("#ListProject").html(x);
+           
+
+                },
+                error: function (err) {
+                    alert(err.status);
+                    console.log(err);
+                }
+            });
+        };
+
+        function SendProjectName(e) {
+            var id = e.target.id;
+            var project_send = id.replace("project_", "");
+           
+            localStorage.setItem('project', project_send)         
+            //alert("id: " + id + "project send: " + project_send);
+            window.location.href = "ProjectInfo.html";
+        };
+
+    </script>
 
 
 
